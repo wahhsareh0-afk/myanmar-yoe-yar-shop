@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+   
+<head>
+    <!-- meta tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Karla&family=Lato&display=swap" rel="stylesheet">
+
+    <!-- fontawesome icon cdn -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- tailwind css cdn (v.3.3.3) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- tailwind css config -->
+    <script>
+        tailwind.config = {
+          theme: {
+            screens: {
+                sm: '480px',
+                md: '768px',
+                lg: '976px',
+                xl: '1440px',
+            },
+            colors: {
+                white: '#FFFFFF',
+                lightGrey: '#F6F6F6',
+                lightBrownishGrey: '#ECECEA',
+                lightBrown: '#EADBC8',
+                primaryBrown: '#5D432A',
+                grey: '#38404C',
+                offBlack: '#1B1A17',
+                black: '#000000',
+                red: '#FF0000'
+            },
+            fontSize: {
+                header1: '32px',
+                header2: '24px',
+                subtitle1: '20px',
+                subtitle2: '18px',
+                description: '18px',
+                navText: '16px',
+                bodyText: '16px',
+                bigHero: '64px'
+            },
+            extend: {
+              
+            }
+          }
+        }
+    </script>
+
+    <!-- pure custom css -->
+    <link rel="stylesheet" href="styles/customStyles.css">
+
+    <!-- page title -->
+    <title>Return/Exchange Policy | Yoe Yar</title>
+
+    <!-- page icon -->
+    <link rel="icon" href="asset/website_logo/Website Icon.svg">
+</head>
+
+<body>
+    <!-- header -->
+    <header class="bg-white fixed top-0 w-full z-50">
+        <!-- nav bar -->
+        <nav id="navbar" class="relative container mx-auto px-4">
+            <!-- menu bar (top) -->
+            <div class="flex flex-row items-center">
+                <!-- search -->
+                <div class="w-52 basis-1/3 flex place-content-start items-center space-x-3">
+                    <div>
+                        <i class="fa-solid fa-magnifying-glass text-offBlack"></i>
+                    </div>
+                    <input type="text" placeholder="Search for products" class="hidden md:block bg-transparent font-karla font-normal text-baseText text-grey border-b border-lightGrey focus:outline-none" />
+                </div>
+                <!-- logo -->
+                <div class="basis-1/3 flex place-content-center">
+                    <a href="index.html"><img class="w-36" src="asset/website_logo/Yoe Yar Logo.svg" alt="website_logo"></a>
+                </div>
+                <!-- nav_icons -->
+                <div class="hidden basis-1/3 md:flex place-content-end space-x-6">
+                    <a href="wishlist.html"><i class="fa-solid fa-heart text-offBlack hover:text-primaryBrown"></i></a>
+                    <a href="shoppingCart.html"><i class="fa-solid fa-cart-shopping text-offBlack hover:text-primaryBrown"></i></a>
+                    <a href="login.html"><i class="fa-solid fa-user text-offBlack hover:text-primaryBrown"></i></a>
+                </div>
+                <!-- hamburger menu button (mobile)-->
+                <div class="block md:hidden basis-1/3 flex place-content-end focus:outline-none">
+                    <button id="menu-btn" class="hamburger">
+                        <span class="hamburger-top"></span>
+                        <span class="hamburger-middle"></span>
+                        <span class="hamburger-bottom"></span>
+                    </button>
+                </div>
+            </div>
+            <!-- divider -->
+            <hr class="hidden md:block border-solid border-lightBrownishGrey ">
+            <!-- menu bar (bottom) -->
+            <div class="hidden md:flex items-center justify-center py-3">
+                <div class="flex space-x-6 lg:space-x-10 font-karla font-medium text-navText">
+                    <a href="index.html" class="text-offBlack hover:text-primaryBrown">Home</a>
+                    <a href="newItems.html" class="text-offBlack hover:text-primaryBrown">New Items</a>
+                    <a href="bestSellers.html" class="text-offBlack hover:text-primaryBrown">Best Sellers</a>
+                    <div>
+                        <button id="dropdownDelayButton1" data-dropdown-toggle="dropdownDelay1" data-dropdown-delay="500" data-dropdown-trigger="hover" class="text-offBlack hover:text-primaryBrown inline-flex items-center" type="button">Categories <svg class="w-2.5 h-2.5 ml-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+                        </svg></button>
+                        <!-- Dropdown menu -->
+                        <div id="dropdownDelay1" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-auto">
+                            <ul class="py-2 text-offBlack hover:text-primaryBrown" aria-labelledby="dropdownDelayButton1">
+                                <li>
+                                    <a href="productCategories.html" class="block px-4 py-2">All categories</a>
+                                </li>
+                                <li>
+                                    <a href="menClothing.html" class="block px-4 py-2">Men clothing</a>
+                                </li>
+                                <li>
+                                    <a href="womenClothing.html" class="block px-4 py-2">Women clothing</a>
+                                </li>
+                                <li>
+                                    <a href="souvenirs.html" class="block px-4 py-2">Souvenirs</a>
+                                </li>
+                                <li>
+                                    <a href="homeDecorItems.html" class="block px-4 py-2">Home decor items</a>
+                                </li>
+                                <li>
+                                    <a href="beautyProducts.html" class="block px-4 py-2">Beauty products</a>
+                                </li>
+                                <li>
+                                    <a href="otherProducts.html" class="block px-4 py-2">Other products</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <a href="productCollections.html" class="text-offBlack hover:text-primaryBrown">Collections</a>
+                    <a href="aboutUs.html" class="text-offBlack hover:text-primaryBrown">About Us</a>
+                    <a href="contactUs.html" class="text-offBlack hover:text-primaryBrown">Contact Us</a>
+                </div>
+            </div>
+            <!-- menu bar (mobile) -->
+            <div class="md:hidden">
+                <div id="menu" class="absolute hidden flex flex-col items-center py-8 space-y-6 bg-white border-2 border-grey font-karla font-medium text-navText w-auto self-center left-4 right-4 shadow">
+                    <a href="index.html" class="text-offBlack hover:text-primaryBrown">Home</a>
+                    <a href="newItems.html" class="text-offBlack hover:text-primaryBrown">New Items</a>
+                    <a href="bestSellers.html" class="text-offBlack hover:text-primaryBrown">Best Sellers</a>
+                    <a href="productCategories.html" class="text-offBlack hover:text-primaryBrown">Categories</a>
+                    <a href="productCollections.html" class="text-offBlack hover:text-primaryBrown">Collections</a>
+                    <a href="aboutUs.html" class="text-offBlack hover:text-primaryBrown">About Us</a>
+                    <a href="contactUs.html" class="text-offBlack hover:text-primaryBrown">Contact Us</a>
+                    <div class="flex place-content-center space-x-12">
+                        <a href="wishlist.html"><i class="fa-solid fa-heart text-offBlack hover:text-primaryBrown"></i></a>
+                        <a href="shoppingCart.html"><i class="fa-solid fa-cart-shopping text-offBlack hover:text-primaryBrown"></i></a>
+                        <a href="login.html"><i class="fa-solid fa-user text-offBlack hover:text-primaryBrown"></i></a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="mt-20 md:mt-28">
+        <!-- Return/Exchange Policy Section -->
+        <section class="bg-white">
+            <div class="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
+                <h2 class="mb-8 font-lato font-medium text-header1 text-primaryBrown">Return/exchange policy</h2>
+                <div class="grid pt-8 text-left border-t border-grey md:gap-16 md:grid-cols-2">
+                    <div>
+                        <div class="mb-10 text-justify">
+                            <h3 class="flex items-center mb-4 font-lato font-normal text-description text-primaryBrown">
+                                1. Eligibility for Returns and Exchanges:
+                            </h3>
+                            <div class="font-karla font-normal text-baseText test-grey">
+                                <p>
+                                    You may be eligible for a return or exchange if:
+                                </p>
+                                <ul class="ms-2">
+                                    <li>- You received a damaged or defective item.</li>
+                                    <li>- You received the wrong item.</li>
+                                    <li>- You are not satisfied with your purchase and wish to return it within the specified time frame.</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="mb-10 text-justify">
+                            <h3 class="flex items-center mb-4 font-lato font-normal text-description text-primaryBrown">
+                                2. Timeframe for Returns and Exchanges:
+                            </h3>
+                            <p class="font-karla font-normal text-baseText test-grey">
+                                To initiate a return or exchange, please contact our customer support team within 30 days of receiving your order. Requests made after this period may not be accepted.
+                            </p>
+                        </div>
+                        <div class="mb-10 text-justify">
+                            <h3 class="flex items-center mb-4 font-lato font-normal text-description text-primaryBrown">
+                                3. Condition of Items:
+                            </h3>
+                            <p class="font-karla font-normal text-baseText test-grey">
+                                All returned or exchanged items must be in their original condition, unused, and with all original tags and packaging intact. Items that show signs of wear, damage, or alteration may not be accepted for return or exchange.
+                            </p>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="mb-10 text-justify">
+                            <h3 class="flex items-center mb-4 font-lato font-normal text-description text-primaryBrown">
+                                4. Return and Exchange Process:
+                            </h3>
+                            <div class="font-karla font-normal text-baseText test-grey">
+                                <p>
+                                    To request a return or exchange, please follow these steps:
+                                </p>
+                                <ul class="ms-2">
+                                    <li>1. Contact our customer support team by visiting our Contact Us page or sending an email to [email address]. Please provide your order number and a detailed reason for the return or exchange.</li>
+                                    <li>2. Our customer support team will provide you with instructions on how to proceed with the return or exchange, including the return shipping address.</li>
+                                    <li>3. Securely package the item(s) you wish to return or exchange, including a copy of the original packing slip or invoice.</li>
+                                    <li>4. Ship the item(s) back to us using a trackable shipping method, and be sure to retain proof of shipment.</li>
+                                    <li>5. Once we receive the returned item(s) and verify their condition, we will process your refund or exchange accordingly.</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="mb-10 text-justify">
+                            <h3 class="flex items-center mb-4 font-lato font-normal text-description text-primaryBrown">
+                                5. Return Shipping Costs:
+                            </h3>
+                            <p class="font-karla font-normal text-baseText test-grey">
+                                If the return or exchange is due to an error on our part (e.g., damaged, defective, or wrong item), we will cover the cost of return shipping. If the return is for any other reason, the customer is responsible for return shipping costs.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>          
+    </main>
+
+    <!-- footer -->
+    <footer class="bg-primaryBrown">
+        <!-- footer top -->
+        <div class="container mx-auto flex flex-col justify-between px-4 py-8 lg:py-12 space-y-12 xl:flex-row xl:space-y-0">
+            <div class="flex flex-row justify-between space-x-2 xl:space-x-32">
+                <div class="flex flex-col space-y-2">
+                    <h1 class="font-karla font-medium text-subtitle2 text-lightGrey">Products</h1>
+                    <a href="newItems.html" class="font-karla font-medium text-navText text-lightGrey hover:opacity-90 transition-opacity">
+                        New items
+                    </a>
+                    <a href="bestSellers.html" class="font-karla font-medium text-navText text-lightGrey hover:opacity-90 transition-opacity">
+                        Best sellers
+                    </a>
+                    <a href="" class="font-karla font-medium text-navText text-lightGrey hover:opacity-90 transition-opacity">
+                        Recently viewed
+                    </a>
+                    <a href="" class="font-karla font-medium text-navText text-lightGrey hover:opacity-90 transition-opacity">
+                        Popular this week
+                    </a>
+                </div>
+                <div class="flex flex-col space-y-2">
+                    <h1 class="font-karla font-medium text-subtitle2 text-lightGrey">User info</h1>
+                    <a href="login.html" class="font-karla font-medium text-navText text-lightGrey hover:opacity-90 transition-opacity">
+                        My account
+                    </a>
+                    <a href="login.html" class="font-karla font-medium text-navText text-lightGrey hover:opacity-90 transition-opacity">
+                        Purchases
+                    </a>
+                </div>
+                <div class="flex flex-col space-y-2">
+                    <h1 class="font-karla font-medium text-subtitle2 text-lightGrey">Our service</h1>
+                    <a href="aboutUs.html" class="font-karla font-medium text-navText text-lightGrey hover:opacity-90 transition-opacity">
+                        About us
+                    </a>
+                    <a href="FAQs.html" class="font-karla font-medium text-navText text-lightGrey hover:opacity-90 transition-opacity">
+                        FAQs
+                    </a>
+                    <a href="privacyPolicy.html" class="font-karla font-medium text-navText text-lightGrey hover:opacity-90 transition-opacity">
+                        Privacy policy
+                    </a>
+                    <a href="returnExchangePolicy.html" class="font-karla font-medium text-navText text-lightGrey hover:opacity-90 transition-opacity">
+                        Return/exchange policy
+                    </a>
+                    <a href="contactUs.html" class="font-karla font-medium text-navText text-lightGrey hover:opacity-90 transition-opacity">
+                        Contact us
+                    </a>
+                </div>
+            </div>
+            <div class="w-4/4 xl:w-2/4 flex flex-col space-y-2 items-center md:items-start">
+                <h1 class="font-karla font-medium text-subtitle2 text-lightGrey">Join our mailing list</h1>
+                <p class="font-karla font-normal text-bodyText text-lightGrey text-center md:text-start">Sign up for our newsletter and receive exclusive offers on new arrivals, sales, pop up stores and more.</p>
+                <!-- email form -->
+                <form action="">
+                    <div class="flex">
+                        <input class="px-4 focus:outline-none font-karla font-normal text-baseText text-offBlack" type="text" name="" id="" placeholder="your@email.com">
+                        <button type="button" class="font-karla font-medium text-navText text-grey bg-lightBrownishGrey px-4 py-2 hover:text-primaryBrown transition-colors">Sign Up</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-- divider -->
+        <hr class="container mx-auto px-4 border-solid border-lightGrey ">
+        <!-- copyright & social links -->
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex flex-col space-y-4 md:flex-row-reverse md:space-y-0 items-center md:items-start justify-between">
+                <div class="flex flex-row space-x-8">
+                    <a href="" class="hover:opacity-90 transition-opacity">
+                        <i class="fa-brands fa-facebook-f fa-2x text-lightGrey"></i>
+                    </a>
+                    <a href="" class="hover:opacity-90 transition-opacity">
+                        <i class="fa-brands fa-x-twitter fa-2x text-lightGrey"></i>
+                    </a>
+                    <a href="" class="hover:opacity-90 transition-opacity">
+                        <i class="fa-brands fa-pinterest-p fa-2x text-lightGrey"></i>
+                    </a>
+                    <a href="" class="hover:opacity-90 transition-opacity">
+                        <i class="fa-brands fa-instagram fa-2x text-lightGrey"></i>
+                    </a>
+                </div>
+                <p class="font-karla font-normal text-bodyText text-lightGrey">
+                    Copyright &copy; 2022, All Rights Reserved
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- flowbite tailwind components javascript -->
+    <script src="https://unpkg.com/@themesberg/flowbite@latest/dist/flowbite.bundle.js"></script>
+    <!-- custom javascript -->
+    <script src="scripts/customScripts.js"></script>
+    <script src="scripts/backToTopButtonBehaviours.js"></script>
+</body>
+
+</html>

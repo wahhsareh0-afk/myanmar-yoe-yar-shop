@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+   
+<head>
+    <!-- meta tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Karla&family=Lato&display=swap" rel="stylesheet">
+
+    <!-- fontawesome icon cdn -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- tailwind css cdn (v.3.3.3) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- tailwind css config -->
+    <script>
+        tailwind.config = {
+          theme: {
+            screens: {
+                sm: '480px',
+                md: '768px',
+                lg: '976px',
+                xl: '1440px',
+            },
+            colors: {
+                white: '#FFFFFF',
+                lightGrey: '#F6F6F6',
+                lightBrownishGrey: '#ECECEA',
+                lightBrown: '#EADBC8',
+                primaryBrown: '#5D432A',
+                grey: '#38404C',
+                offBlack: '#1B1A17',
+                black: '#000000',
+                red: '#FF0000'
+            },
+            fontSize: {
+                header1: '32px',
+                header2: '24px',
+                subtitle1: '20px',
+                subtitle2: '18px',
+                description: '18px',
+                navText: '16px',
+                bodyText: '16px',
+                bigHero: '64px'
+            },
+            extend: {
+              
+            }
+          }
+        }
+    </script>
+
+    <!-- pure custom css -->
+    <link rel="stylesheet" href="styles/customStyles.css">
+
+    <!-- page title -->
+    <title>FAQs | Yoe Yar</title>
+
+    <!-- page icon -->
+    <link rel="icon" href="asset/website_logo/Website Icon.svg">
+</head>
+
+<body>
+    <!-- header -->
+    <header class="bg-white fixed top-0 w-full z-50">
+        <!-- nav bar -->
+        <nav id="navbar" class="relative container mx-auto px-4">
+            <!-- menu bar (top) -->
+            <div class="flex flex-row items-center">
+                <!-- search -->
+                <div class="w-52 basis-1/3 flex place-content-start items-center space-x-3">
+                    <div>
+                        <i class="fa-solid fa-magnifying-glass text-offBlack"></i>
+                    </div>
+                    <input type="text" placeholder="Search for products" class="hidden md:block bg-transparent font-karla font-normal text-baseText text-grey border-b border-lightGrey focus:outline-none" />
+                </div>
+                <!-- logo -->
+                <div class="basis-1/3 flex place-content-center">
+                    <a href="index.html"><img class="w-36" src="asset/website_logo/Yoe Yar Logo.svg" alt="website_logo"></a>
+                </div>
+                <!-- nav_icons -->
+                <div class="hidden basis-1/3 md:flex place-content-end space-x-6">
+                    <a href="wishlist.html"><i class="fa-solid fa-heart text-offBlack hover:text-primaryBrown"></i></a>
+                    <a href="shoppingCart.html"><i class="fa-solid fa-cart-shopping text-offBlack hover:text-primaryBrown"></i></a>
+                    <a href="login.html"><i class="fa-solid fa-user text-offBlack hover:text-primaryBrown"></i></a>
+                </div>
+                <!-- hamburger menu button (mobile)-->
+                <div class="block md:hidden basis-1/3 flex place-content-end focus:outline-none">
+                    <button id="menu-btn" class="hamburger">
+                        <span class="hamburger-top"></span>
+                        <span class="hamburger-middle"></span>
+                        <span class="hamburger-bottom"></span>
+                    </button>
+                </div>
+            </div>
+            <!-- divider -->
+            <hr class="hidden md:block border-solid border-lightBrownishGrey ">
+            <!-- menu bar (bottom) -->
+            <div class="hidden md:flex items-center justify-center py-3">
+                <div class="flex space-x-6 lg:space-x-10 font-karla font-medium text-navText">
+                    <a href="index.html" class="text-offBlack hover:text-primaryBrown">Home</a>
+                    <a href="newItems.html" class="text-offBlack hover:text-primaryBrown">New Items</a>
+                    <a href="bestSellers.html" class="text-offBlack hover:text-primaryBrown">Best Sellers</a>
+                    <div>
+                        <button id="dropdownDelayButton1" data-dropdown-toggle="dropdownDelay1" data-dropdown-delay="500" data-dropdown-trigger="hover" class="text-offBlack hover:text-primaryBrown inline-flex items-center" type="button">Categories <svg class="w-2.5 h-2.5 ml-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+                        </svg></button>
+                        <!-- Dropdown menu -->
+                        <div id="dropdownDelay1" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-auto">
+                            <ul class="py-2 text-offBlack hover:text-primaryBrown" aria-labelledby="dropdownDelayButton1">
+                                <li>
+                                    <a href="productCategories.html" class="block px-4 py-2">All categories</a>
+                                </li>
+                                <li>
+                                    <a href="menClothing.html" class="block px-4 py-2">Men clothing</a>
+                                </li>
+                                <li>
+                                    <a href="womenClothing.html" class="block px-4 py-2">Women clothing</a>
+                                </li>
+                                <li>
+                                    <a href="souvenirs.html" class="block px-4 py-2">Souvenirs</a>
+                                </li>
+                                <li>
+                                    <a href="homeDecorItems.html" class="block px-4 py-2">Home decor items</a>
+                                </li>
+                                <li>
+                                    <a href="beautyProducts.html" class="block px-4 py-2">Beauty products</a>
+                                </li>
+                                <li>
+                                    <a href="otherProducts.html" class="block px-4 py-2">Other products</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <a href="productCollections.html" class="text-offBlack hover:text-primaryBrown">Collections</a>
+                    <a href="aboutUs.html" class="text-offBlack hover:text-primaryBrown">About Us</a>
+                    <a href="contactUs.html" class="text-offBlack hover:text-primaryBrown">Contact Us</a>
+                </div>
+            </div>
+            <!-- menu bar (mobile) -->
+            <div class="md:hidden">
+                <div id="menu" class="absolute hidden flex flex-col items-center py-8 space-y-6 bg-white border-2 border-grey font-karla font-medium text-navText w-auto self-center left-4 right-4 shadow">
+                    <a href="index.html" class="text-offBlack hover:text-primaryBrown">Home</a>
+                    <a href="newItems.html" class="text-offBlack hover:text-primaryBrown">New Items</a>
+                    <a href="bestSellers.html" class="text-offBlack hover:text-primaryBrown">Best Sellers</a>
+                    <a href="productCategories.html" class="text-offBlack hover:text-primaryBrown">Categories</a>
+                    <a href="productCollections.html" class="text-offBlack hover:text-primaryBrown">Collections</a>
+                    <a href="aboutUs.html" class="text-offBlack hover:text-primaryBrown">About Us</a>
+                    <a href="contactUs.html" class="text-offBlack hover:text-primaryBrown">Contact Us</a>
+                    <div class="flex place-content-center space-x-12">
+                        <a href="wishlist.html"><i class="fa-solid fa-heart text-offBlack hover:text-primaryBrown"></i></a>
+                        <a href="shoppingCart.html"><i class="fa-solid fa-cart-shopping text-offBlack hover:text-primaryBrown"></i></a>
+                        <a href="login.html"><i class="fa-solid fa-user text-offBlack hover:text-primaryBrown"></i></a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="mt-20 md:mt-28">
+        <!-- FAQs Section -->
+        <section class="bg-white">
+            <div class="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
+                <h2 class="mb-8 font-lato font-medium text-header1 text-primaryBrown">Frequently asked questions</h2>
+                <div class="grid pt-8 text-left border-t border-grey md:gap-16 md:grid-cols-2">
+                    <div>
+                        <div class="mb-10 text-justify">
+                            <h3 class="flex items-center mb-4 font-lato font-normal text-description text-primaryBrown">
+                                <svg class="flex-shrink-0 mr-2 w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd"></path></svg>
+                                Are your products truly authentic?
+                            </h3>
+                            <p class="font-karla font-normal text-baseText test-grey">
+                                Yes, all our products are carefully sourced and handcrafted by local artisans in Myanmar. We take great pride in ensuring the authenticity and cultural significance of each item in our collection.
+                            </p>
+                        </div>
+                        <div class="mb-10 text-justify">
+                            <h3 class="flex items-center mb-4 font-lato font-normal text-description text-primaryBrown">
+                                <svg class="flex-shrink-0 mr-2 w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd"></path></svg>
+                                How can I be sure of the quality of your products?
+                            </h3>
+                            <p class="font-karla font-normal text-baseText test-grey">
+                                Quality is our utmost priority. Our products undergo rigorous quality checks to ensure that they meet our high standards. We work closely with artisans to maintain the highest level of craftsmanship.
+                            </p>
+                        </div>
+                        <div class="mb-10 text-justify">
+                            <h3 class="flex items-center mb-4 font-lato font-normal text-description text-primaryBrown">
+                                <svg class="flex-shrink-0 mr-2 w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd"></path></svg>
+                                Do you offer customization options for your products?
+                            </h3>
+                            <p class="font-karla font-normal text-baseText test-grey">
+                                Currently, we do not offer customization services. However, we are constantly expanding our product range, so stay tuned for updates.
+                            </p>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="mb-10 text-justify">
+                            <h3 class="flex items-center mb-4 font-lato font-normal text-description text-primaryBrown">
+                                <svg class="flex-shrink-0 mr-2 w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd"></path></svg>
+                                What payment methods do you accept?
+                            </h3>
+                            <p class="font-karla font-normal text-baseText test-grey">
+                                We accept major credit cards, as well as PayPal, for online payments.
+                            </p>
+                        </div>
+                        <div class="mb-10 text-justify">
+                            <h3 class="flex items-center mb-4 font-lato font-normal text-description text-primaryBrown">
+                                <svg class="flex-shrink-0 mr-2 w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd"></path></svg>
+                                How long does it take for my order to be shipped?
+                            </h3>
+                            <p class="font-karla font-normal text-baseText test-grey">
+                                Orders are typically processed within 1-3 business days. Shipping times may vary depending on your location and the shipping method chosen during checkout.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>          
+    </main>
+
+    <!-- footer -->
+    <footer class="bg-primaryBrown">
+        <!-- footer top -->
+        <div class="container mx-auto flex flex-col justify-between px-4 py-8 lg:py-12 space-y-12 xl:flex-row xl:space-y-0">
+            <div class="flex flex-row justify-between space-x-2 xl:space-x-32">
+                <div class="flex flex-col space-y-2">
+                    <h1 class="font-karla font-medium text-subtitle2 text-lightGrey">Products</h1>
+                    <a href="newItems.html" class="font-karla font-medium text-navText text-lightGrey hover:opacity-90 transition-opacity">
+                        New items
+                    </a>
+                    <a href="bestSellers.html" class="font-karla font-medium text-navText text-lightGrey hover:opacity-90 transition-opacity">
+                        Best sellers
+                    </a>
+                    <a href="" class="font-karla font-medium text-navText text-lightGrey hover:opacity-90 transition-opacity">
+                        Recently viewed
+                    </a>
+                    <a href="" class="font-karla font-medium text-navText text-lightGrey hover:opacity-90 transition-opacity">
+                        Popular this week
+                    </a>
+                </div>
+                <div class="flex flex-col space-y-2">
+                    <h1 class="font-karla font-medium text-subtitle2 text-lightGrey">User info</h1>
+                    <a href="login.html" class="font-karla font-medium text-navText text-lightGrey hover:opacity-90 transition-opacity">
+                        My account
+                    </a>
+                    <a href="login.html" class="font-karla font-medium text-navText text-lightGrey hover:opacity-90 transition-opacity">
+                        Purchases
+                    </a>
+                </div>
+                <div class="flex flex-col space-y-2">
+                    <h1 class="font-karla font-medium text-subtitle2 text-lightGrey">Our service</h1>
+                    <a href="aboutUs.html" class="font-karla font-medium text-navText text-lightGrey hover:opacity-90 transition-opacity">
+                        About us
+                    </a>
+                    <a href="FAQs.html" class="font-karla font-medium text-navText text-lightGrey hover:opacity-90 transition-opacity">
+                        FAQs
+                    </a>
+                    <a href="privacyPolicy.html" class="font-karla font-medium text-navText text-lightGrey hover:opacity-90 transition-opacity">
+                        Privacy policy
+                    </a>
+                    <a href="returnExchangePolicy.html" class="font-karla font-medium text-navText text-lightGrey hover:opacity-90 transition-opacity">
+                        Return/exchange policy
+                    </a>
+                    <a href="contactUs.html" class="font-karla font-medium text-navText text-lightGrey hover:opacity-90 transition-opacity">
+                        Contact us
+                    </a>
+                </div>
+            </div>
+            <div class="w-4/4 xl:w-2/4 flex flex-col space-y-2 items-center md:items-start">
+                <h1 class="font-karla font-medium text-subtitle2 text-lightGrey">Join our mailing list</h1>
+                <p class="font-karla font-normal text-bodyText text-lightGrey text-center md:text-start">Sign up for our newsletter and receive exclusive offers on new arrivals, sales, pop up stores and more.</p>
+                <!-- email form -->
+                <form action="">
+                    <div class="flex">
+                        <input class="px-4 focus:outline-none font-karla font-normal text-baseText text-offBlack" type="text" name="" id="" placeholder="your@email.com">
+                        <button type="button" class="font-karla font-medium text-navText text-grey bg-lightBrownishGrey px-4 py-2 hover:text-primaryBrown transition-colors">Sign Up</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-- divider -->
+        <hr class="container mx-auto px-4 border-solid border-lightGrey ">
+        <!-- copyright & social links -->
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex flex-col space-y-4 md:flex-row-reverse md:space-y-0 items-center md:items-start justify-between">
+                <div class="flex flex-row space-x-8">
+                    <a href="" class="hover:opacity-90 transition-opacity">
+                        <i class="fa-brands fa-facebook-f fa-2x text-lightGrey"></i>
+                    </a>
+                    <a href="" class="hover:opacity-90 transition-opacity">
+                        <i class="fa-brands fa-x-twitter fa-2x text-lightGrey"></i>
+                    </a>
+                    <a href="" class="hover:opacity-90 transition-opacity">
+                        <i class="fa-brands fa-pinterest-p fa-2x text-lightGrey"></i>
+                    </a>
+                    <a href="" class="hover:opacity-90 transition-opacity">
+                        <i class="fa-brands fa-instagram fa-2x text-lightGrey"></i>
+                    </a>
+                </div>
+                <p class="font-karla font-normal text-bodyText text-lightGrey">
+                    Copyright &copy; 2022, All Rights Reserved
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- flowbite tailwind components javascript -->
+    <script src="https://unpkg.com/@themesberg/flowbite@latest/dist/flowbite.bundle.js"></script>
+    <!-- custom javascript -->
+    <script src="scripts/customScripts.js"></script>
+    <script src="scripts/backToTopButtonBehaviours.js"></script>
+</body>
+
+</html>

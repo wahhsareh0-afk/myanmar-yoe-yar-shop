@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+   
+<head>
+    <!-- meta tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Karla&family=Lato&display=swap" rel="stylesheet">
+
+    <!-- fontawesome icon cdn -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- tailwind css cdn (v.3.3.3) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- tailwind css config -->
+    <script>
+        tailwind.config = {
+          theme: {
+            screens: {
+                sm: '480px',
+                md: '768px',
+                lg: '976px',
+                xl: '1440px',
+            },
+            colors: {
+                white: '#FFFFFF',
+                lightGrey: '#F6F6F6',
+                lightBrownishGrey: '#ECECEA',
+                lightBrown: '#EADBC8',
+                primaryBrown: '#5D432A',
+                grey: '#38404C',
+                offBlack: '#1B1A17',
+                black: '#000000',
+                red: '#FF0000'
+            },
+            fontSize: {
+                header1: '32px',
+                header2: '24px',
+                subtitle1: '20px',
+                subtitle2: '18px',
+                description: '18px',
+                navText: '16px',
+                bodyText: '16px',
+                bigHero: '64px'
+            },
+            extend: {
+              
+            }
+          }
+        }
+    </script>
+
+    <!-- custom css with tailwind feature -->
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .gallery-width-xs {
+                width: 320px;
+            }
+            .gallery-width-sm {
+                width: 480px;
+            }
+            .gallery-width-lg {
+                width: 600px;
+            }
+            .gallery-height-xs {
+                height: 300px;
+            }
+            .gallery-height-sm {
+                height: 420px;
+            }
+            .gallery-height-lg {
+                height: 540px;
+            }
+        }
+    </style>
+    
+    <!-- pure custom css -->
+    <link rel="stylesheet" href="../styles/customStyles.css">
+
+    <!-- page title -->
+    <title>Product Details | Yoe Yar</title>
+
+    <!-- page icon -->
+    <link rel="icon" href="../asset/website_logo/Website Icon.svg">
+</head>
+
+<body>
+    <!-- header -->
+    <header class="bg-white fixed top-0 w-full z-50">
+        <!-- nav bar -->
+        <nav id="navbar" class="relative container mx-auto px-4">
+            <!-- menu bar (top) -->
+            <div class="flex flex-row items-center">
+                <!-- search -->
+                <div class="w-52 basis-1/3 flex place-content-start items-center space-x-3">
+                    <div>
+                        <i class="fa-solid fa-magnifying-glass text-offBlack"></i>
+                    </div>
+                    <input type="text" placeholder="Search for products" class="hidden md:block bg-transparent font-karla font-normal text-baseText text-grey border-b border-lightGrey focus:outline-none" />
+                </div>
+                <!-- logo -->
+                <div class="basis-1/3 flex place-content-center">
+                    <a href="../index.html"><img class="w-36" src="../asset/website_logo/Yoe Yar Logo.svg" alt="website_logo"></a>
+                </div>
+                <!-- nav_icons -->
+                <div class="hidden basis-1/3 md:flex place-content-end space-x-6">
+                    <a href="../wishlist.html"><i class="fa-solid fa-heart text-offBlack hover:text-primaryBrown"></i></a>
+                    <a href="../shoppingCart.html"><i class="fa-solid fa-cart-shopping text-offBlack hover:text-primaryBrown"></i></a>
+                    <a href="../login.html"><i class="fa-solid fa-user text-offBlack hover:text-primaryBrown"></i></a>
+                </div>
+                <!-- hamburger menu button (mobile)-->
+                <div class="block md:hidden basis-1/3 flex place-content-end focus:outline-none">
+                    <button id="menu-btn" class="hamburger">
+                        <span class="hamburger-top"></span>
+                        <span class="hamburger-middle"></span>
+                        <span class="hamburger-bottom"></span>
+                    </button>
+                </div>
+            </div>
+            <!-- divider -->
+            <hr class="hidden md:block border-solid border-lightBrownishGrey ">
+            <!-- menu bar (bottom) -->
+            <div class="hidden md:flex items-center justify-center py-3">
+                <div class="flex space-x-6 lg:space-x-10 font-karla font-medium text-navText">
+                    <a href="../index.html" class="text-primaryBrown hover:text-primaryBrown">Home</a>
+                    <a href="../newItems.html" class="text-offBlack hover:text-primaryBrown">New Items</a>
+                    <a href="../bestSellers.html" class="text-offBlack hover:text-primaryBrown">Best Sellers</a>
+                    <div>
+                        <button id="dropdownDelayButton1" data-dropdown-toggle="dropdownDelay1" data-dropdown-delay="500" data-dropdown-trigger="hover" class="text-offBlack hover:text-primaryBrown inline-flex items-center" type="button">Categories <svg class="w-2.5 h-2.5 ml-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+                        </svg></button>
+                        <!-- Dropdown menu -->
+                        <div id="dropdownDelay1" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-auto">
+                            <ul class="py-2 text-offBlack hover:text-primaryBrown" aria-labelledby="dropdownDelayButton1">
+                                <li>
+                                    <a href="../productCategories.html" class="block px-4 py-2">All categories</a>
+                                </li>
+                                <li>
+                                    <a href="../menClothing.html" class="block px-4 py-2">Men clothing</a>
+                                </li>
+                                <li>
+                                    <a href="../womenClothing.html" class="block px-4 py-2">Women clothing</a>
+                                </li>
+                                <li>
+                                    <a href="../souvenirs.html" class="block px-4 py-2">Souvenirs</a>
+                                </li>
+                                <li>
+                                    <a href="../homeDecorItems.html" class="block px-4 py-2">Home decor items</a>
+                                </li>
+                                <li>
+                                    <a href="../beautyProducts.html" class="block px-4 py-2">Beauty products</a>
+                                </li>
+                                <li>
+                                    <a href="../otherProducts.html" class="block px-4 py-2">Other products</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <a href="../productCollections.html" class="text-offBlack hover:text-primaryBrown">Collections</a>
+                    <a href="../aboutUs.html" class="text-offBlack hover:text-primaryBrown">About Us</a>
+                    <a href="../contactUs.html" class="text-offBlack hover:text-primaryBrown">Contact Us</a>
+                </div>
+            </div>
+            <!-- menu bar (mobile) -->
+            <div class="md:hidden">
+                <div id="menu" class="absolute hidden flex flex-col items-center py-8 space-y-6 bg-white border-2 border-grey font-karla font-medium text-navText w-auto self-center left-4 right-4 shadow">
+                    <a href="../index.html" class="text-primaryBrown hover:text-primaryBrown">Home</a>
+                    <a href="../newItems.html" class="text-offBlack hover:text-primaryBrown">New Items</a>
+                    <a href="../bestSellers.html" class="text-offBlack hover:text-primaryBrown">Best Sellers</a>
+                    <a href="../productCategories.html" class="text-offBlack hover:text-primaryBrown">Categories</a>
+                    <a href="../productCollections.html" class="text-offBlack hover:text-primaryBrown">Collections</a>
+                    <a href="../aboutUs.html" class="text-offBlack hover:text-primaryBrown">About Us</a>
+                    <a href="../contactUs.html" class="text-offBlack hover:text-primaryBrown">Contact Us</a>
+                    <div class="flex place-content-center space-x-12">
+                        <a href="../wishlist.html"><i class="fa-solid fa-heart text-offBlack hover:text-primaryBrown"></i></a>
+                        <a href="../shoppingCart.html"><i class="fa-solid fa-cart-shopping text-offBlack hover:text-primaryBrown"></i></a>
+                        <a href="login.html"><i class="fa-solid fa-user text-offBlack hover:text-primaryBrown"></i></a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="mt-20 md:mt-28">
+        <!-- product detail section -->
+        <section class="container mx-auto px-4 py-8 mb-14">
+            <div class="flex flex-col lg:flex-row items-center gap-8">
+                <!-- Image Div-->
+                <div class="basis-1/2 flex place-content-center items-center">
+                    <div id="gallery" class="relative bg-lightGrey gallery-width-xs gallery-height-xs sm:gallery-width-sm sm:gallery-height-sm xl:gallery-width-lg xl:gallery-height-lg" data-carousel="slide">
+                        <!-- Carousel wrapper -->
+                        <div class="relative w-full h-full overflow-hidden rounded-lg">
+                            <div class="hidden duration-1000 ease-in-out" data-carousel-item>
+                                <img src="../asset/product_images/men_clothing_product_1/men_clothing_product_1.jpg" class="absolute block max-w-full h-auto -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="">
+                            </div>
+                            <div class="hidden duration-1000 ease-in-out" data-carousel-item>
+                                <img src="../asset/product_images/men_clothing_product_1/men_clothing_product_1.1.jpg" class="absolute block max-w-full h-auto -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="">
+                            </div>
+                            <div class="hidden duration-1000 ease-in-out" data-carousel-item>
+                                <img src="../asset/product_images/men_clothing_product_1/men_clothing_product_1.2.jpg" class="absolute block max-w-full h-auto -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="">
+                            </div>
+                            <div class="hidden duration-1000 ease-in-out" data-carousel-item>
+                                <img src="../asset/product_images/men_clothing_product_1/men_clothing_product_1.3.jpg" class="absolute block max-w-full h-auto -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="">
+                            </div>
+                        </div>
+                        <!-- Slider controls -->
+                        <button type="button" class="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
+                            <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-grey border-2 border-lightGrey group-hover:opacity-90 transition-opacity group-focus:ring-4 group-focus:ring-white group-focus:outline-none">
+                                <svg class="w-4 h-4 text-lightGrey" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
+                                </svg>
+                                <span class="sr-only">Previous</span>
+                            </span>
+                        </button>
+                        <button type="button" class="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
+                            <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-grey border-2 border-lightGrey group-hover:opacity-90 transition-opacity group-focus:ring-4 group-focus:ring-white group-focus:outline-none">
+                                <svg class="w-4 h-4 text-lightGrey" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
+                                </svg>
+                                <span class="sr-only">Next</span>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+                <!-- Description Div -->
+                <div class="basis-1/2 w-full flex flex-col place-content-start">
+                    <h1 class="font-lato font-medium text-header1 text-primaryBrown">
+                        Premium Rakhine Longyi
+                    </h1>
+                    <p class="font-karla font-normal text-description text-offBlack mt-2">
+                        Longyi Village
+                    </p>
+                    <div class="flex flex-row justify-between mt-4 text-offBlack text-start">
+                        <div class="flex flex-row space-x-2">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-regular fa-star"></i>
+                        </div>
+                        <p class="font-karla font-normal text-baseText text-grey text-start hover:underline cursor-pointer">22 reviews</p>
+                    </div>
+                    <!-- price -->
+                    <p class="font-lato font-normal text-header2 text-offBlack text-start mt-12">
+                        80000 MMK
+                    </p>
+                    <!-- buttons -->
+                    <div class="flex flex-row justify-between items-center mt-6">
+                        <p class="font-karla font-normal text-description text-offBlack text-start">Select quantity</p>
+                        <!-- select quantity button -->
+                        <div class="flex">
+                            <span onclick="minus()" class="cursor-pointer border border-offBlack border-r-0 w-7 h-7 flex items-center justify-center pb-1">-</span>
+                            <input id="counter" aria-label="input" class="border border-offBlack w-14 h-7 text-center pb-1" type="text" value="1" />
+                            <span onclick="plus()" class="cursor-pointer border border-offBlack border-l-0 w-7 h-7 flex items-center justify-center pb-1">+</span>
+                        </div>
+                    </div>
+                    <hr class="border-solid border-offBlack w-full my-4"/>
+                    <div class="flex flex-row justify-between items-center">
+                        <!-- add to wishlist button -->
+                        <div id="successButton" data-modal-toggle="successModal" class="wishlist-btn rounded-full bg-lightGrey px-3 py-2.5">
+                            <i class="wishlist-btn-icon fa-regular fa-heart fa-lg text-grey"></i>
+                        </div>
+                        <!-- add to cart button -->
+                        <button type="button" class="flex flex-row space-x-2 items-center font-karla font-medium text-navText text-lightGrey bg-primaryBrown px-3 py-2.5 hover:opacity-90 transition-opacity">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                            <p>Add to cart</p>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+
+        <!-- you mike also like section -->
+        <section class="container mx-auto px-4 py-4 lg:py-0 mb-14">
+            <!-- session title -->
+            <h2 class="font-lato font-medium text-header1 text-primaryBrown text-center lg:text-start mb-10">
+                You might also like
+            </h2>
+            <!-- products -->
+            <div class="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
+                <div class="group">
+                    <div class="relative aspect-h-1 aspect-w-1 w-full overflow-hidden xl:aspect-h-8 xl:aspect-w-7">
+                        <a href="men_clothing_product_2.html">
+                            <img src="../asset/product_images/men_clothing_product_2/men_clothing_product_2.jpg" alt="men_clothing_product_2" class="h-full w-full object-cover object-center transition duration-300 ease-in-out group-hover:scale-110">
+                        </a>
+                        <!-- wishlist add button -->
+                        <div id="successButton" data-modal-toggle="successModal"  class="wishlist-btn absolute bottom-0 right-0 bg-lightGrey px-3 py-2 shadow hover:opacity-90 transition-opacity hidden group-hover:block">
+                            <i class="wishlist-btn-icon fa-regular fa-heart fa-lg text-grey"></i>
+                        </div>
+                    </div>
+                    <a href="men_clothing_product_2.html">
+                        <h3 class="mt-4 font-lato font-normal text-subtitle1 text-offBlack">
+                            Longyi Village - Premium Myanmar Silk Longyi
+                        </h3>
+                        <p class="mt-1 font-karla font-normal text-description text-grey">
+                            98000 MMK
+                        </p>
+                    </a>
+                </div>
+                <div class="group">
+                    <div class="relative aspect-h-1 aspect-w-1 w-full overflow-hidden xl:aspect-h-8 xl:aspect-w-7">
+                        <a href="men_clothing_product_3.html">
+                            <img src="../asset/product_images/men_clothing_product_3/men_clothing_product_3.jpg" alt="men_clothing_product_3" class="h-full w-full object-cover object-center transition duration-300 ease-in-out group-hover:scale-110">
+                        </a>
+                        <!-- wishlist add button -->
+                        <div id="successButton" data-modal-toggle="successModal"  class="wishlist-btn absolute bottom-0 right-0 bg-lightGrey px-3 py-2 shadow hover:opacity-90 transition-opacity hidden group-hover:block">
+                            <i class="wishlist-btn-icon fa-regular fa-heart fa-lg text-grey"></i>
+                        </div>
+                    </div>
+                    <a href="men_clothing_product_3.html">
+                        <h3 class="mt-4 font-lato font-normal text-subtitle1 text-offBlack">
+                            Longyi Village - Chain Khar Mhi Longyi
+                        </h3>
+                        <p class="mt-1 font-karla font-normal text-description text-grey">
+                            34000 MMK
+                        </p>
+                    </a>
+                </div>
+                <div class="group">
+                    <div class="relative aspect-h-1 aspect-w-1 w-full overflow-hidden xl:aspect-h-8 xl:aspect-w-7">
+                        <a href="men_clothing_product_8.html">
+                            <img src="../asset/product_images/men_clothing_product_8/men_clothing_product_8.jpg" alt="men_clothing_product_8" class="h-full w-full object-cover object-center transition duration-300 ease-in-out group-hover:scale-110">
+                        </a>
+                        <!-- wishlist add button -->
+                        <div id="successButton" data-modal-toggle="successModal"  class="wishlist-btn absolute bottom-0 right-0 bg-lightGrey px-3 py-2 shadow hover:opacity-90 transition-opacity hidden group-hover:block">
+                            <i class="wishlist-btn-icon fa-regular fa-heart fa-lg text-grey"></i>
+                        </div>
+                    </div>
+                    <a href="men_clothing_product_8.html">
+                        <h3 class="mt-4 font-lato font-normal text-subtitle1 text-offBlack">
+                            Gon - Burmese Jacket
+                        </h3>
+                        <p class="mt-1 font-karla font-normal text-description text-grey">
+                            65000 MMK
+                        </p>
+                    </a>
+                </div>
+                <div class="group">
+                    <div class="relative aspect-h-1 aspect-w-1 w-full overflow-hidden xl:aspect-h-8 xl:aspect-w-7">
+                        <a href="men_clothing_product_7.html">
+                            <img src="../asset/product_images/men_clothing_product_7/men_clothing_product_7.jpg" alt="men_clothing_product_7" class="h-full w-full object-cover object-center transition duration-300 ease-in-out group-hover:scale-110">
+                        </a>
+                        <!-- wishlist add button -->
+                        <div id="successButton" data-modal-toggle="successModal"  class="wishlist-btn absolute bottom-0 right-0 bg-lightGrey px-3 py-2 shadow hover:opacity-90 transition-opacity hidden group-hover:block">
+                            <i class="wishlist-btn-icon fa-regular fa-heart fa-lg text-grey"></i>
+                        </div>
+                    </div>
+                    <a href="men_clothing_product_7.html">
+                        <h3 class="mt-4 font-lato font-normal text-subtitle1 text-offBlack">
+                            Gon - Limited Edition Silk Burmese Jacket
+                        </h3>
+                        <p class="mt-1 font-karla font-normal text-description text-grey">
+                            130000 MMK
+                        </p>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Wishlist Add Success Message -->
+    <div id="successModal" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-modal md:h-full">
+        <div class="relative p-4 w-full max-w-md h-full md:h-auto">
+            <!-- Modal content -->
+            <div class="relative p-4 text-center bg-white rounded-lg shadow sm:p-5">
+                <button type="button" class="text-offBlack absolute top-2.5 right-2.5 bg-transparent hover:bg-grey hover:text-lightGrey transition-colors rounded-lg text-sm p-1.5 ml-auto inline-flex items-center" data-modal-toggle="successModal">
+                    <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                    <span class="sr-only">Close modal</span>
+                </button>
+                <div class="w-12 h-12 rounded-full p-2 flex items-center justify-center mx-auto mb-3.5">
+                    <i class="fa-solid fa-heart fa-2x text-red"></i>
+                </div>
+                <p class="mb-4 font-karla font-medium text-description text-offBlack">Successfully added product to your wishlist.</p>
+                <button data-modal-toggle="successModal" type="button" class="py-2 px-3 font-karla font-medium text-navText text-offBlack hover:bg-grey hover:text-lightGrey transition-colors text-center border-2 border-offBlack">
+                    Continue
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- footer -->
+    <footer class="bg-primaryBrown">
+        <!-- footer top -->
+        <div class="container mx-auto flex flex-col justify-between px-4 py-8 lg:py-12 space-y-12 xl:flex-row xl:space-y-0">
+            <div class="flex flex-row justify-between space-x-2 xl:space-x-32">
+                <div class="flex flex-col space-y-2">
+                    <h1 class="font-karla font-medium text-subtitle2 text-lightGrey">Products</h1>
+                    <a href="../newItems.html" class="font-karla font-medium text-navText text-lightGrey hover:opacity-90 transition-opacity">
+                        New items
+                    </a>
+                    <a href="../bestSellers.html" class="font-karla font-medium text-navText text-lightGrey hover:opacity-90 transition-opacity">
+                        Best sellers
+                    </a>
+                    <a href="" class="font-karla font-medium text-navText text-lightGrey hover:opacity-90 transition-opacity">
+                        Recently viewed
+                    </a>
+                    <a href="" class="font-karla font-medium text-navText text-lightGrey hover:opacity-90 transition-opacity">
+                        Popular this week
+                    </a>
+                </div>
+                <div class="flex flex-col space-y-2">
+                    <h1 class="font-karla font-medium text-subtitle2 text-lightGrey">User info</h1>
+                    <a href="../login.html" class="font-karla font-medium text-navText text-lightGrey hover:opacity-90 transition-opacity">
+                        My account
+                    </a>
+                    <a href="../login.html" class="font-karla font-medium text-navText text-lightGrey hover:opacity-90 transition-opacity">
+                        Purchases
+                    </a>
+                </div>
+                <div class="flex flex-col space-y-2">
+                    <h1 class="font-karla font-medium text-subtitle2 text-lightGrey">Our service</h1>
+                    <a href="../aboutUs.html" class="font-karla font-medium text-navText text-lightGrey hover:opacity-90 transition-opacity">
+                        About us
+                    </a>
+                    <a href="../FAQs.html" class="font-karla font-medium text-navText text-lightGrey hover:opacity-90 transition-opacity">
+                        FAQs
+                    </a>
+                    <a href="../privacyPolicy.html" class="font-karla font-medium text-navText text-lightGrey hover:opacity-90 transition-opacity">
+                        Privacy policy
+                    </a>
+                    <a href="../returnExchangePolicy.html" class="font-karla font-medium text-navText text-lightGrey hover:opacity-90 transition-opacity">
+                        Return/exchange policy
+                    </a>
+                    <a href="../contactUs.html" class="font-karla font-medium text-navText text-lightGrey hover:opacity-90 transition-opacity">
+                        Contact us
+                    </a>
+                </div>
+            </div>
+            <div class="w-4/4 xl:w-2/4 flex flex-col space-y-2 items-center md:items-start">
+                <h1 class="font-karla font-medium text-subtitle2 text-lightGrey">Join our mailing list</h1>
+                <p class="font-karla font-normal text-bodyText text-lightGrey text-center md:text-start">Sign up for our newsletter and receive exclusive offers on new arrivals, sales, pop up stores and more.</p>
+                <!-- email form -->
+                <form action="">
+                    <div class="flex">
+                        <input class="px-4 focus:outline-none font-karla font-normal text-baseText text-offBlack" type="text" name="" id="" placeholder="your@email.com">
+                        <button type="button" class="font-karla font-medium text-navText text-grey bg-lightBrownishGrey px-4 py-2 hover:text-primaryBrown transition-colors">Sign Up</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-- divider -->
+        <hr class="container mx-auto px-4 border-solid border-lightGrey ">
+        <!-- copyright & social links -->
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex flex-col space-y-4 md:flex-row-reverse md:space-y-0 items-center md:items-start justify-between">
+                <div class="flex flex-row space-x-8">
+                    <a href="" class="hover:opacity-90 transition-opacity">
+                        <i class="fa-brands fa-facebook-f fa-2x text-lightGrey"></i>
+                    </a>
+                    <a href="" class="hover:opacity-90 transition-opacity">
+                        <i class="fa-brands fa-x-twitter fa-2x text-lightGrey"></i>
+                    </a>
+                    <a href="" class="hover:opacity-90 transition-opacity">
+                        <i class="fa-brands fa-pinterest-p fa-2x text-lightGrey"></i>
+                    </a>
+                    <a href="" class="hover:opacity-90 transition-opacity">
+                        <i class="fa-brands fa-instagram fa-2x text-lightGrey"></i>
+                    </a>
+                </div>
+                <p class="font-karla font-normal text-bodyText text-lightGrey">
+                    Copyright &copy; 2022, All Rights Reserved
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- flowbite tailwind components javascript -->
+    <script src="https://unpkg.com/@themesberg/flowbite@latest/dist/flowbite.bundle.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.js"></script>
+    <!-- custom javascript -->
+    <script src="../scripts/customScripts.js"></script>
+</body>
+
+</html>

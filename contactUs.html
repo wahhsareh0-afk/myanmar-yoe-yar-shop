@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+   
+<head>
+    <!-- meta tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Karla&family=Lato&display=swap" rel="stylesheet">
+
+    <!-- fontawesome icon cdn -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- tailwind css cdn -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- tailwind css config -->
+    <script>
+        tailwind.config = {
+          theme: {
+            screens: {
+                sm: '480px',
+                md: '768px',
+                lg: '976px',
+                xl: '1440px',
+            },
+            colors: {
+                white: '#FFFFFF',
+                lightGrey: '#F6F6F6',
+                lightBrownishGrey: '#ECECEA',
+                lightBrown: '#EADBC8',
+                primaryBrown: '#5D432A',
+                grey: '#38404C',
+                offBlack: '#1B1A17',
+                black: '#000000',
+                red: '#FF0000'
+            },
+            fontSize: {
+                header1: '32px',
+                header2: '24px',
+                subtitle1: '20px',
+                subtitle2: '18px',
+                description: '18px',
+                navText: '16px',
+                bodyText: '16px',
+                bigHero: '64px'
+            },
+            extend: {
+              
+            }
+          }
+        }
+    </script>
+
+    <!-- pure custom css -->
+    <link rel="stylesheet" href="styles/customStyles.css">
+
+    <!-- page title -->
+    <title>Contact Us | Yoe Yar</title>
+
+    <!-- page icon -->
+    <link rel="icon" href="asset/website_logo/Website Icon.svg">
+</head>
+
+<body>
+    <!-- header -->
+    <header class="bg-white fixed top-0 w-full">
+        <!-- nav bar -->
+        <nav id="navbar" class="relative container mx-auto px-4">
+            <!-- menu bar top -->
+            <div class="flex flex-row items-center">
+                <!-- search -->
+                <div class="w-52 basis-1/3 flex place-content-start items-center space-x-3">
+                    <div>
+                        <i class="fa-solid fa-magnifying-glass text-offBlack"></i>
+                    </div>
+                    <input type="text" placeholder="Search for products" class="hidden md:block bg-transparent font-karla font-normal text-baseText text-grey border-b border-lightGrey focus:outline-none" />
+                </div>
+                <!-- logo -->
+                <div class="basis-1/3 flex place-content-center">
+                    <a href="index.html"><img class="w-36" src="asset/website_logo/Yoe Yar Logo.svg" alt="website_logo"></a>
+                </div>
+                <!-- nav_icons -->
+                <div class="hidden basis-1/3 md:flex place-content-end space-x-6">
+                    <a href="wishlist.html"><i class="fa-solid fa-heart text-offBlack hover:text-primaryBrown"></i></a>
+                    <a href="shoppingCart.html"><i class="fa-solid fa-cart-shopping text-offBlack hover:text-primaryBrown"></i></a>
+                    <a href="login.html"><i class="fa-solid fa-user text-offBlack hover:text-primaryBrown"></i></a>
+                </div>
+                <!-- hamburger menu button (mobile)-->
+                <div class="block md:hidden basis-1/3 flex place-content-end focus:outline-none">
+                    <button id="menu-btn" class="hamburger">
+                        <span class="hamburger-top"></span>
+                        <span class="hamburger-middle"></span>
+                        <span class="hamburger-bottom"></span>
+                    </button>
+                </div>
+            </div>
+            <!-- divider -->
+            <hr class="hidden md:block border-solid border-lightBrownishGrey ">
+            <!-- menu bar bottom -->
+            <div class="hidden md:flex items-center justify-center py-3">
+                <div class="flex space-x-6 lg:space-x-10 font-karla font-medium text-navText">
+                    <a href="index.html" class="hover:text-primaryBrown">Home</a>
+                    <a href="newItems.html" class="text-offBlack hover:text-primaryBrown">New Items</a>
+                    <a href="bestSellers.html" class="text-offBlack hover:text-primaryBrown">Best Sellers</a>
+                    <div>
+                        <button id="dropdownDelayButton1" data-dropdown-toggle="dropdownDelay1" data-dropdown-delay="500" data-dropdown-trigger="hover" class="text-offBlack hover:text-primaryBrown inline-flex items-center" type="button">Categories <svg class="w-2.5 h-2.5 ml-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+                        </svg></button>
+                        <!-- Dropdown menu -->
+                        <div id="dropdownDelay1" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-auto">
+                            <ul class="py-2 text-offBlack hover:text-primaryBrown" aria-labelledby="dropdownDelayButton1">
+                                <li>
+                                    <a href="productCategories.html" class="block px-4 py-2">All categories</a>
+                                </li>
+                                <li>
+                                    <a href="menClothing.html" class="block px-4 py-2">Men clothing</a>
+                                </li>
+                                <li>
+                                    <a href="womenClothing.html" class="block px-4 py-2">Women clothing</a>
+                                </li>
+                                <li>
+                                    <a href="souvenirs.html" class="block px-4 py-2">Souvenirs</a>
+                                </li>
+                                <li>
+                                    <a href="homeDecorItems.html" class="block px-4 py-2">Home decor items</a>
+                                </li>
+                                <li>
+                                    <a href="beautyProducts.html" class="block px-4 py-2">Beauty products</a>
+                                </li>
+                                <li>
+                                    <a href="otherProducts.html" class="block px-4 py-2">Other products</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <a href="productCollections.html" class="text-offBlack hover:text-primaryBrown">Collections</a>
+                    <a href="aboutUs.html" class="text-offBlack hover:text-primaryBrown">About Us</a>
+                    <a href="contactUs.html" class="text-primaryBrown hover:text-primaryBrown">Contact Us</a>
+                </div>
+            </div>
+            <!-- menu bar (mobile) -->
+            <div class="md:hidden">
+                <div id="menu" class="absolute hidden flex flex-col items-center py-8 space-y-6 bg-white border-2 border-grey font-karla font-medium text-navText w-auto self-center left-4 right-4 shadow">
+                    <a href="index.html" class="text-offBlack hover:text-primaryBrown">Home</a>
+                    <a href="newItems.html" class="text-offBlack hover:text-primaryBrown">New Items</a>
+                    <a href="bestSellers.html" class="text-offBlack hover:text-primaryBrown">Best Sellers</a>
+                    <a href="productCategories.html" class="text-offBlack hover:text-primaryBrown">Categories</a>
+                    <a href="productCollections.html" class="text-offBlack hover:text-primaryBrown">Collections</a>
+                    <a href="aboutUs.html" class="text-offBlack hover:text-primaryBrown">About Us</a>
+                    <a href="contactUs.html" class="text-primaryBrown hover:text-primaryBrown">Contact Us</a>
+                    <div class="flex place-content-center space-x-12">
+                        <a href="wishlist.html"><i class="fa-solid fa-heart text-offBlack hover:text-primaryBrown"></i></a>
+                        <a href="shoppingCart.html"><i class="fa-solid fa-cart-shopping text-offBlack hover:text-primaryBrown"></i></a>
+                        <a href="login.html"><i class="fa-solid fa-user text-offBlack hover:text-primaryBrown"></i></a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="mt-20 md:mt-28">
+        <!-- contact form -->
+        <section id="contact_form" class="mb-16">
+            <div class="bg-white px-6 py-8 lg:py-12">
+                <!-- titles -->
+                <div class="mx-auto max-w-xl">
+                    <h1 class="font-lato font-medium text-header1 text-primaryBrown text-center mb-2">
+                        Contact us
+                    </h1>
+                    <p class="font-karla font-normal text-description text-grey text-center">
+                        Contact us about anything related to our company or services. We'll do our best to get back to you as soon as possible.
+                    </p>
+                </div>
+                <form action="#" method="POST" class="mx-auto max-w-xl mt-10 sm:mt-14">
+                    <!-- informations -->
+                    <div class="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
+                        <!-- first name -->
+                        <div>
+                        <label for="first-name" class="block font-karla font-normal text-description text-offBlack text-start">First name</label>
+                        <div class="mt-2.5">
+                            <input type="text" name="first-name" id="first-name" autocomplete="given-name" class="block w-full bg-lightGrey font-karla font-normal text-baseText text-offBlack px-3.5 py-2">
+                        </div>
+                        </div>
+                        <!-- last name -->
+                        <div>
+                        <label for="last-name" class="block font-karla font-normal text-description text-offBlack text-start">Last name</label>
+                        <div class="mt-2.5">
+                            <input type="text" name="last-name" id="last-name" autocomplete="family-name" class="block w-full bg-lightGrey font-karla font-normal text-baseText text-offBlack px-3.5 py-2">
+                        </div>
+                        </div>
+                        <!-- company -->
+                        <div class="sm:col-span-2">
+                        <label for="company" class="block font-karla font-normal text-description text-offBlack text-start">Company</label>
+                        <div class="mt-2.5">
+                            <input type="text" name="company" id="company" autocomplete="organization" class="block w-full bg-lightGrey font-karla font-normal text-baseText text-offBlack px-3.5 py-2">
+                        </div>
+                        </div>
+                        <!-- email -->
+                        <div class="sm:col-span-2">
+                        <label for="email" class="block font-karla font-normal text-description text-offBlack text-start">Email</label>
+                        <div class="mt-2.5">
+                            <input type="email" name="email" id="email" autocomplete="email" class="block w-full bg-lightGrey font-karla font-normal text-baseText text-offBlack px-3.5 py-2">
+                        </div>
+                        </div>
+                        <!-- subject -->
+                        <div class="sm:col-span-2">
+                            <label for="company" class="block font-karla font-normal text-description text-offBlack text-start">Subject</label>
+                            <div class="mt-2.5">
+                            <input type="text" name="company" id="company" autocomplete="organization" class="block w-full bg-lightGrey font-karla font-normal text-baseText text-offBlack px-3.5 py-2">
+                            </div>
+                        </div>
+                        <!-- message -->
+                        <div class="sm:col-span-2">
+                        <label for="message" class="block font-karla font-normal text-description text-offBlack text-start">Message</label>
+                        <div class="mt-2.5">
+                            <textarea name="message" id="message" rows="4" class="block w-full bg-lightGrey font-karla font-normal text-baseText text-offBlack px-3.5 py-2"></textarea>
+                        </div>
+                        </div>
+                    </div>
+                    <!-- submit button -->
+                    <div class="mt-10">
+                        <button type="submit" class="block w-full px-3.5 py-2.5 bg-primaryBrown font-karla font-medium text-navText text-lightGrey text-center hover:opacity-90 transition-opacity">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <!-- contact address -->
+        <section id="contact_address">
+            <div class="flex flex-col md:flex-row-reverse space-y-4 md:space-y-0 justify-center">
+                <div class="md:basis-1/2 flex flex-col space-y-4 px-6 md:px-12 lg:px-24">
+                    <h1 class="font-lato font-normal text-header2 text-primaryBrown text-center md:text-start">Contact address</h1>
+                    <!-- address -->
+                    <div class="flex flex-row space-x-2 items-center">
+                        <i class="fa-solid fa-location-dot text-offBlack"></i>
+                        <p class="font-karla font-normal text-bodyText text-offBlack text-start">No.36, 6th Street, Thamine 1 Quarter, Mayangone Township, Yangon.</p>
+                    </div>
+                    <!-- phone number -->
+                    <div class="flex flex-row space-x-2 items-center">
+                        <i class="fa-solid fa-phone text-offBlack"></i>
+                        <p class="font-karla font-normal text-bodyText text-offBlack text-start">+959771311442</p>
+                    </div>
+                    <!-- email -->
+                    <div class="flex flex-row space-x-2 items-center">
+                        <i class="fa-solid fa-envelope text-offBlack"></i>
+                        <p class="font-karla font-normal text-bodyText text-offBlack text-start">sales@yoeyar.com.mm</p>
+                    </div>
+                </div>
+                <!-- google map -->
+                <div class="md:basis-1/2 cursor-pointer">
+                    <img id="google-map-image" src="asset/images/contact_us_google_map.jpg" alt="google_map">
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- sidepanel -->
+    <section id="sidepanel" class="hidden z-50">
+        <div class="relative z-10" aria-labelledby="slide-over-title" role="dialog" aria-modal="true">
+            <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"></div>
+            <div class="fixed inset-0 overflow-hidden">
+              <div class="absolute inset-0 overflow-hidden">
+                <div class="pointer-events-none fixed inset-y-0 right-0 flex max-w-full pl-10">
+                  <div class="pointer-events-auto w-screen max-w-md">
+                    <div class="flex h-full flex-col overflow-y-scroll bg-white py-6 shadow-xl">
+                      <div class="px-4 sm:px-6">
+                        <div class="flex flex-row justify-between items-center">
+                            <h2 class="font-lato text-description font-medium text-offBlack text-start" id="slide-over-title">Google Map Location</h2>
+                            <button id="sidepanel-close-btn" type="button" class="rounded-md text-offBlack hover:opacity-90 transition-opacity focus:outline-none focus:ring-2 focus:ring-white">
+                                <span class="absolute -inset-2.5"></span>
+                                <span class="sr-only">Close panel</span>
+                                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                                  <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                                </svg>
+                              </button>
+                        </div>
+                      </div>
+                      <div class="relative mt-6 flex-1 px-4 sm:px-6">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3818.249799679251!2d96.1114042!3d16.863533099999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30c194fe1283e5d1%3A0xce0a755ed0370376!2z4YGGIOGAnOGAmeGAuuGAuCwgWWFuZ29u!5e0!3m2!1sen!2smm!4v1694156387817!5m2!1sen!2smm" width="400" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Back to top button -->
+    <div id="backToTopContainer" class="fixed bottom-8 right-4 invisible">
+        <button id="backToTopButton" class="px-4 py-4 rounded-full shadow-md bg-grey hover:bg-offBlack text-lightGrey text-navText font-semibold transition-colors duration-300">
+            <svg aria-hidden="true" focusable="false" data-prefix="fas"class="h-4 w-4" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                <path fill="currentColor"d="M34.9 289.5l-22.2-22.2c-9.4-9.4-9.4-24.6 0-33.9L207 39c9.4-9.4 24.6-9.4 33.9 0l194.3 194.3c9.4 9.4 9.4 24.6 0 33.9L413 289.4c-9.5 9.5-25 9.3-34.3-.4L264 168.6V456c0 13.3-10.7 24-24 24h-32c-13.3 0-24-10.7-24-24V168.6L69.2 289.1c-9.3 9.8-24.8 10-34.3.4z"></path>
+            </svg>
+            <span class="sr-only">Go to top</span>
+        </button>
+    </div>
+
+    <!-- footer -->
+    <footer class="bg-primaryBrown">
+        <!-- footer top -->
+        <div class="container mx-auto flex flex-col justify-between px-4 py-8 lg:py-12 space-y-12 xl:flex-row xl:space-y-0">
+            <div class="flex flex-row justify-between space-x-2 xl:space-x-32">
+                <div class="flex flex-col space-y-2">
+                    <h1 class="font-karla font-medium text-subtitle2 text-lightGrey">Products</h1>
+                    <a href="newItems.html" class="font-karla font-medium text-navText text-lightGrey hover:opacity-90 transition-opacity">
+                        New items
+                    </a>
+                    <a href="bestSellers.html" class="font-karla font-medium text-navText text-lightGrey hover:opacity-90 transition-opacity">
+                        Best sellers
+                    </a>
+                    <a href="" class="font-karla font-medium text-navText text-lightGrey hover:opacity-90 transition-opacity">
+                        Recently viewed
+                    </a>
+                    <a href="" class="font-karla font-medium text-navText text-lightGrey hover:opacity-90 transition-opacity">
+                        Popular this week
+                    </a>
+                </div>
+                <div class="flex flex-col space-y-2">
+                    <h1 class="font-karla font-medium text-subtitle2 text-lightGrey">User info</h1>
+                    <a href="login.html" class="font-karla font-medium text-navText text-lightGrey hover:opacity-90 transition-opacity">
+                        My account
+                    </a>
+                    <a href="login.html" class="font-karla font-medium text-navText text-lightGrey hover:opacity-90 transition-opacity">
+                        Purchases
+                    </a>
+                </div>
+                <div class="flex flex-col space-y-2">
+                    <h1 class="font-karla font-medium text-subtitle2 text-lightGrey">Our service</h1>
+                    <a href="aboutUs.html" class="font-karla font-medium text-navText text-lightGrey hover:opacity-90 transition-opacity">
+                        About us
+                    </a>
+                    <a href="FAQs.html" class="font-karla font-medium text-navText text-lightGrey hover:opacity-90 transition-opacity">
+                        FAQs
+                    </a>
+                    <a href="privacyPolicy.html" class="font-karla font-medium text-navText text-lightGrey hover:opacity-90 transition-opacity">
+                        Privacy policy
+                    </a>
+                    <a href="returnExchangePolicy.html" class="font-karla font-medium text-navText text-lightGrey hover:opacity-90 transition-opacity">
+                        Return/exchange policy
+                    </a>
+                    <a href="contactUs.html" class="font-karla font-medium text-navText text-lightGrey hover:opacity-90 transition-opacity">
+                        Contact us
+                    </a>
+                </div>
+            </div>
+            <div class="w-4/4 xl:w-2/4 flex flex-col space-y-2 items-center md:items-start">
+                <h1 class="font-karla font-medium text-subtitle2 text-lightGrey">Join our mailing list</h1>
+                <p class="font-karla font-normal text-bodyText text-lightGrey text-center md:text-start">Sign up for our newsletter and receive exclusive offers on new arrivals, sales, pop up stores and more.</p>
+                <!-- email form -->
+                <form action="">
+                    <div class="flex">
+                        <input class="px-4 focus:outline-none font-karla font-normal text-baseText text-offBlack" type="text" name="" id="" placeholder="your@email.com">
+                        <button type="button" class="font-karla font-medium text-navText text-grey bg-lightBrownishGrey px-4 py-2 hover:text-primaryBrown transition-colors">Sign Up</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-- divider -->
+        <hr class="container mx-auto px-4 border-solid border-lightGrey ">
+        <!-- copyright & social links -->
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex flex-col space-y-4 md:flex-row-reverse md:space-y-0 items-center md:items-start justify-between">
+                <div class="flex flex-row space-x-8">
+                    <a href="" class="hover:opacity-90 transition-opacity">
+                        <i class="fa-brands fa-facebook-f fa-2x text-lightGrey"></i>
+                    </a>
+                    <a href="" class="hover:opacity-90 transition-opacity">
+                        <i class="fa-brands fa-x-twitter fa-2x text-lightGrey"></i>
+                    </a>
+                    <a href="" class="hover:opacity-90 transition-opacity">
+                        <i class="fa-brands fa-pinterest-p fa-2x text-lightGrey"></i>
+                    </a>
+                    <a href="" class="hover:opacity-90 transition-opacity">
+                        <i class="fa-brands fa-instagram fa-2x text-lightGrey"></i>
+                    </a>
+                </div>
+                <p class="font-karla font-normal text-bodyText text-lightGrey">
+                    Copyright &copy; 2022, All Rights Reserved
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- flowbite tailwind components javascript -->
+    <script src="https://unpkg.com/@themesberg/flowbite@latest/dist/flowbite.bundle.js"></script>
+    <!-- custom javascript -->
+    <script src="scripts/customScripts.js"></script>
+    <script src="scripts/backToTopButtonBehaviours.js"></script>
+</body>
+
+</html>

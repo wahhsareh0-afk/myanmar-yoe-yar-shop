@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+   
+<head>
+    <!-- meta tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Welcome to Yoe Yar, your gateway to a world of authentic Burmese Traditional Products and cultural treasures.">
+
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Karla&family=Lato&display=swap" rel="stylesheet">
+
+    <!-- fontawesome icon cdn -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- tailwind css cdn (v.3.3.3) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- tailwind css config -->
+    <script>
+        tailwind.config = {
+          theme: {
+            screens: {
+                sm: '480px',
+                md: '768px',
+                lg: '976px',
+                xl: '1440px',
+            },
+            colors: {
+                white: '#FFFFFF',
+                lightGrey: '#F6F6F6',
+                lightBrownishGrey: '#ECECEA',
+                lightBrown: '#EADBC8',
+                primaryBrown: '#5D432A',
+                grey: '#38404C',
+                offBlack: '#1B1A17',
+                black: '#000000',
+                red: '#FF0000'
+            },
+            fontSize: {
+                header1: '32px',
+                header2: '24px',
+                subtitle1: '20px',
+                subtitle2: '18px',
+                description: '18px',
+                navText: '16px',
+                bodyText: '16px',
+                bigHero: '64px'
+            },
+            extend: {
+              
+            }
+          }
+        }
+    </script>
+
+    <!-- pure custom css -->
+    <link rel="stylesheet" href="styles/customStyles.css">
+
+    <!-- page title -->
+    <title>Home | Yoe Yar</title>
+
+    <!-- page icon -->
+    <link rel="icon" href="asset/website_logo/Website Icon.svg">
+</head>
+
+<body>
+    <!-- header -->
+    <header class="bg-white fixed top-0 w-full z-50">
+        <!-- nav bar -->
+        <nav id="navbar" class="relative container mx-auto px-4">
+            <!-- menu bar (top) -->
+            <div class="flex flex-row items-center">
+                <!-- search -->
+                <div class="w-52 basis-1/3 flex place-content-start items-center space-x-3">
+                    <div>
+                        <i class="fa-solid fa-magnifying-glass text-offBlack"></i>
+                    </div>
+                    <input type="text" placeholder="Search for products" class="hidden md:block bg-transparent font-karla font-normal text-baseText text-grey border-b border-lightGrey focus:outline-none" />
+                </div>
+                <!-- logo -->
+                <div class="basis-1/3 flex place-content-center">
+                    <a href="index.html"><img class="w-36" src="asset/website_logo/Yoe Yar Logo.svg" alt="website_logo"></a>
+                </div>
+                <!-- nav_icons -->
+                <div class="hidden basis-1/3 md:flex place-content-end space-x-6">
+                    <a href="wishlist.html"><i class="fa-solid fa-heart text-offBlack hover:text-primaryBrown"></i></a>
+                    <a href="shoppingCart.html"><i class="fa-solid fa-cart-shopping text-offBlack hover:text-primaryBrown"></i></a>
+                    <a href="login.html"><i class="fa-solid fa-user text-offBlack hover:text-primaryBrown"></i></a>
+                </div>
+                <!-- hamburger menu button (mobile)-->
+                <div class="block md:hidden basis-1/3 flex place-content-end focus:outline-none">
+                    <button id="menu-btn" class="hamburger">
+                        <span class="hamburger-top"></span>
+                        <span class="hamburger-middle"></span>
+                        <span class="hamburger-bottom"></span>
+                    </button>
+                </div>
+            </div>
+            <!-- divider -->
+            <hr class="hidden md:block border-solid border-lightBrownishGrey ">
+            <!-- menu bar (bottom) -->
+            <div class="hidden md:flex items-center justify-center py-3">
+                <div class="flex space-x-6 lg:space-x-10 font-karla font-medium text-navText">
+                    <a href="index.html" class="text-primaryBrown hover:text-primaryBrown">Home</a>
+                    <a href="newItems.html" class="text-offBlack hover:text-primaryBrown">New Items</a>
+                    <a href="bestSellers.html" class="text-offBlack hover:text-primaryBrown">Best Sellers</a>
+                    <div>
+                        <button id="dropdownDelayButton1" data-dropdown-toggle="dropdownDelay1" data-dropdown-delay="500" data-dropdown-trigger="hover" class="text-offBlack hover:text-primaryBrown inline-flex items-center" type="button">Categories <svg class="w-2.5 h-2.5 ml-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+                        </svg></button>
+                        <!-- Dropdown menu -->
+                        <div id="dropdownDelay1" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-auto">
+                            <ul class="py-2 text-offBlack hover:text-primaryBrown" aria-labelledby="dropdownDelayButton1">
+                                <li>
+                                    <a href="productCategories.html" class="block px-4 py-2">All categories</a>
+                                </li>
+                                <li>
+                                    <a href="menClothing.html" class="block px-4 py-2">Men clothing</a>
+                                </li>
+                                <li>
+                                    <a href="womenClothing.html" class="block px-4 py-2">Women clothing</a>
+                                </li>
+                                <li>
+                                    <a href="souvenirs.html" class="block px-4 py-2">Souvenirs</a>
+                                </li>
+                                <li>
+                                    <a href="homeDecorItems.html" class="block px-4 py-2">Home decor items</a>
+                                </li>
+                                <li>
+                                    <a href="beautyProducts.html" class="block px-4 py-2">Beauty products</a>
+                                </li>
+                                <li>
+                                    <a href="otherProducts.html" class="block px-4 py-2">Other products</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <a href="productCollections.html" class="text-offBlack hover:text-primaryBrown">Collections</a>
+                    <a href="aboutUs.html" class="text-offBlack hover:text-primaryBrown">About Us</a>
+                    <a href="contactUs.html" class="text-offBlack hover:text-primaryBrown">Contact Us</a>
+                </div>
+            </div>
+            <!-- menu bar (mobile) -->
+            <div class="md:hidden">
+                <div id="menu" class="absolute hidden flex flex-col items-center py-8 space-y-6 bg-white border-2 border-grey font-karla font-medium text-navText w-auto self-center left-4 right-4 shadow">
+                    <a href="index.html" class="text-primaryBrown hover:text-primaryBrown">Home</a>
+                    <a href="newItems.html" class="text-offBlack hover:text-primaryBrown">New Items</a>
+                    <a href="bestSellers.html" class="text-offBlack hover:text-primaryBrown">Best Sellers</a>
+                    <a href="productCategories.html" class="text-offBlack hover:text-primaryBrown">Categories</a>
+                    <a href="productCollections.html" class="text-offBlack hover:text-primaryBrown">Collections</a>
+                    <a href="aboutUs.html" class="text-offBlack hover:text-primaryBrown">About Us</a>
+                    <a href="contactUs.html" class="text-offBlack hover:text-primaryBrown">Contact Us</a>
+                    <div class="flex place-content-center space-x-12">
+                        <a href="wishlist.html"><i class="fa-solid fa-heart text-offBlack hover:text-primaryBrown"></i></a>
+                        <a href="shoppingCart.html"><i class="fa-solid fa-cart-shopping text-offBlack hover:text-primaryBrown"></i></a>
+                        <a href="login.html"><i class="fa-solid fa-user text-offBlack hover:text-primaryBrown"></i></a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="mt-20 md:mt-28">
+        <!-- hero section -->
+        <section id="hero" class="home-page-hero-background mb-16">
+            <div class="grid grid-cols-2 lg:px-20 lg:py-32">
+                <!-- left space -->
+                <div class="col-span-0 lg:col-span-1"></div>
+                <!-- right items -->
+                <div class="col-span-2 lg:col-span-1 bg-white p-12 lg:p-8 lg:shadow">
+                    <div class="flex flex-col">
+                        <h1 class="font-lato font-medium text-header1 text-primaryBrown text-center lg:text-start mb-4">
+                            Unique traditional clothing collection for men
+                        </h1>
+                        <p class="font-karla font-normal text-description text-grey text-center lg:text-start mb-16 lg:mb-40">
+                            Shop the new 2023 Men Traditional Clothing Collection today.
+                        </p>
+                        <div class="flex flex-row space-x-2 justify-center lg:justify-start">
+                            <a href="menTraditionalCothingCollection2023.html"><button type="button" class="font-karla font-medium text-navText text-lightGrey bg-primaryBrown px-3 md:px-7 py-2.5 hover:opacity-90 transition-opacity">View collection</button></a>
+                            <a href="login.html"><button type="button" class="font-karla font-medium text-navText text-grey bg-lightBrownishGrey px-3 md:px-7 py-2.5 hover:text-primaryBrown transition-colors">Log in</button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- hero image (mobile) -->
+        <div class="lg:hidden mb-16 align-center">
+            <img src="asset/images/home_page_hero.jpg" alt="home_page_hero">
+        </div>
+
+        <!-- features section -->
+        <section id="features" class="container mx-auto px-4 py-4 lg:py-0 mb-16">
+            <!-- session title -->
+            <h2 class="font-lato font-normal text-header2 text-primaryBrown text-center mb-10">
+                What makes our store different?
+            </h2>
+            <!-- features -->
+            <div class="flex flex-col space-y-12 md:space-y-0 md:flex-row md:space-x-6">
+                <!-- feature 1 -->
+                <div class="flex flex-col items-center md:items-start space-y-4 md:w-1/4">
+                    <img class="w-8" src="asset/icons/delivery.svg" alt="delivery_icon">
+                    <h5 class="font-lato font-normal text-subtitle1 text-offBlack">Fast delivery</h5>
+                    <p class="font-karla font-normal text-bodyText text-grey text-center md:text-start">
+                        Get your order within 3 days as standard.
+                    </p>
+                </div>
+                <!-- feature 2 -->
+                <div class="flex flex-col items-center md:items-start space-y-4 md:w-1/4">
+                    <img class="w-8" src="asset/icons/checkmark.svg" alt="checkmark_icon">
+                    <h5 class="font-lato font-normal text-subtitle1 text-offBlack">Authentic products</h5>
+                    <p class="font-karla font-normal text-bodyText text-grey text-center md:text-start">
+                        We offers authentic Burmese traditional products from local businesses.
+                    </p>
+                </div>
+                <!-- feature 3 -->
+                <div class="flex flex-col items-center md:items-start space-y-4 md:w-1/4">
+                    <img class="w-8" src="asset/icons/purchase.svg" alt="purchase_icon">
+                    <h5 class="font-lato font-normal text-subtitle1 text-offBlack">Unbeatable prices</h5>
+                    <p class="font-karla font-normal text-bodyText text-grey text-center md:text-start">
+                        For materials and quality, you won’t find better prices anywhere.
+                    </p>
+                </div>
+                <!-- feature 4 -->
+                <div class="flex flex-col items-center md:items-start space-y-4 md:w-1/4">
+                    <img class="w-8" src="asset/icons/sprout.svg" alt="sprout_icon">
+                    <h5 class="font-lato font-normal text-subtitle1 text-offBlack">Recycled packaging</h5>
+                    <p class="font-karla font-normal text-bodyText text-grey text-center md:text-start">
+                        We use 100% recycled packaging to ensure our footprint is manageable.
+                    </p>
+                </div>
+            </div>
+        </section>  
+
+        <!-- new items section -->
+        <section id="new_items" class="container mx-auto px-4 py-4 lg:py-0 mb-16">
+            <!-- session title -->
+            <h2 class="font-lato font-medium text-header1 text-primaryBrown text-center lg:text-start mb-10">
+                New items
+            </h2>
+            <!-- products -->
+            <div class="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8 mb-10">
+                <div class="group">
+                    <div class="relative aspect-h-1 aspect-w-1 w-full overflow-hidden xl:aspect-h-8 xl:aspect-w-7">
+                        <a href="product_detail_pages/men_clothing_product_5.html">
+                            <img src="asset/product_images/men_clothing_product_5/men_clothing_product_5.jpg" alt="men_clothing_product_5" class="h-full w-full object-cover object-center transition duration-300 ease-in-out group-hover:scale-110">
+                        </a>
+                        <p class="absolute left-0 top-2 bg-grey px-4 py-1 font-karla font-normal text-baseText text-lightGrey text-center">
+                            New
+                        </p>
+                        <!-- wishlist add button -->
+                        <div id="successButton" data-modal-toggle="successModal"  class="wishlist-btn absolute bottom-0 right-0 bg-lightGrey px-3 py-2 shadow hover:opacity-90 transition-opacity hidden group-hover:block">
+                            <i class="wishlist-btn-icon fa-regular fa-heart fa-lg text-grey"></i>
+                        </div>
+                    </div>
+                    <a href="product_detail_pages/men_clothing_product_5.html">
+                        <h3 class="mt-4 font-lato font-normal text-subtitle1 text-offBlack">
+                            UKK Longyi - Pan Sin Kyar Longyi
+                        </h3>
+                    </a>
+                    <p class="mt-1 font-karla font-normal text-description text-grey">
+                        28000 MMK
+                    </p>
+                </div>
+                <div class="group">
+                    <div class="relative aspect-h-1 aspect-w-1 w-full overflow-hidden xl:aspect-h-8 xl:aspect-w-7">
+                        <a href="product_detail_pages/women_clothing_product_8.html">
+                            <img src="asset/product_images/women_clothing_product_8/women_clothing_product_8.jpg" alt="women_clothing_product_8" class="h-full w-full object-cover object-center transition duration-300 ease-in-out group-hover:scale-110">
+                        </a>
+                        <p class="absolute left-0 top-2 bg-grey px-4 py-1 font-karla font-normal text-baseText text-lightGrey text-center">
+                            New
+                        </p>
+                        <!-- wishlist add button -->
+                        <div id="successButton" data-modal-toggle="successModal"  class="wishlist-btn absolute bottom-0 right-0 bg-lightGrey px-3 py-2 shadow hover:opacity-90 transition-opacity hidden group-hover:block">
+                            <i class="wishlist-btn-icon fa-regular fa-heart fa-lg text-grey"></i>
+                        </div>
+                    </div>
+                    <a href="product_detail_pages/women_clothing_product_8.html">
+                        <h3 class="mt-4 font-lato font-normal text-subtitle1 text-offBlack">
+                            Dalae - Cotton Scarf
+                        </h3>
+                    </a>
+                    <p class="mt-1 font-karla font-normal text-description text-grey">
+                        19500 MMK
+                    </p>
+                </div>
+                <div class="group">
+                    <div class="relative aspect-h-1 aspect-w-1 w-full overflow-hidden xl:aspect-h-8 xl:aspect-w-7">
+                        <a href="product_detail_pages/home_decor_product_1.html">
+                            <img src="asset/product_images/home_decor_product_1/home_decor_product_1.jpg" alt="home_decor_product_1" class="h-full w-full object-cover object-center transition duration-300 ease-in-out group-hover:scale-110">
+                        </a>
+                        <p class="absolute left-0 top-2 bg-grey px-4 py-1 font-karla font-normal text-baseText text-lightGrey text-center">
+                            New
+                        </p>
+                        <!-- wishlist add button -->
+                        <div id="successButton" data-modal-toggle="successModal"  class="wishlist-btn absolute bottom-0 right-0 bg-lightGrey px-3 py-2 shadow hover:opacity-90 transition-opacity hidden group-hover:block">
+                            <i class="wishlist-btn-icon fa-regular fa-heart fa-lg text-grey"></i>
+                        </div>
+                    </div>
+                    <a href="product_detail_pages/home_decor_product_1.html">
+                        <h3 class="mt-4 font-lato font-normal text-subtitle1 text-offBlack">
+                            Doh Yoe Yar Myay - Lotus-shaped Soy Candles Box
+                        </h3>
+                    </a>
+                    <p class="mt-1 font-karla font-normal text-description text-grey">
+                        19500 MMK
+                    </p>
+                </div>
+                <div class="group">
+                    <div class="relative aspect-h-1 aspect-w-1 w-full overflow-hidden xl:aspect-h-8 xl:aspect-w-7">
+                        <a href="product_detail_pages/souvenir_product_2.html">
+                            <img src="asset/product_images/souvenir_product_2/souvenir_product_2.jpg" alt="souvenir_product_2" class="h-full w-full object-cover object-center transition duration-300 ease-in-out group-hover:scale-110">
+                        </a>
+                        <p class="absolute left-0 top-2 bg-grey px-4 py-1 font-karla font-normal text-baseText text-lightGrey text-center">
+                            New
+                        </p>
+                        <!-- wishlist add button -->
+                        <div id="successButton" data-modal-toggle="successModal"  class="wishlist-btn absolute bottom-0 right-0 bg-lightGrey px-3 py-2 shadow hover:opacity-90 transition-opacity hidden group-hover:block">
+                            <i class="wishlist-btn-icon fa-regular fa-heart fa-lg text-grey"></i>
+                        </div>
+                    </div>
+                    <a href="product_detail_pages/souvenir_product_2.html">
+                        <h3 class="mt-4 font-lato font-normal text-subtitle1 text-offBlack">
+                            Oasis Khin - Pathein Umbrella
+                        </h3>
+                    </a>
+                    <p class="mt-1 font-karla font-normal text-description text-grey">
+                        20000 MMK
+                    </p>
+                </div>
+            </div>
+            <!-- view all button -->
+            <div class="text-center">
+                <a href="newItems.html"><button type="button" class="font-karla font-medium text-navText text-grey bg-lightBrownishGrey px-7 py-2.5 hover:text-primaryBrown transition-colors">View all</button></a>
+            </div>
+        </section>
+
+        <!-- best sellers section -->
+        <section id="best_sellers" class="container mx-auto px-4 py-4 lg:py-0 mb-16">
+            <!-- session title -->
+            <h2 class="font-lato font-medium text-header1 text-primaryBrown text-center lg:text-start mb-10">
+                Best sellers
+            </h2>
+            <!-- products -->
+            <div class="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8 mb-10">
+                <div class="group">
+                    <div class="relative aspect-h-1 aspect-w-1 w-full overflow-hidden xl:aspect-h-8 xl:aspect-w-7">
+                        <a href="product_detail_pages/men_clothing_product_3.html">
+                            <img src="asset/product_images/men_clothing_product_3/men_clothing_product_3.jpg" alt="men_clothing_product_3" class="h-full w-full object-cover object-center transition duration-300 ease-in-out group-hover:scale-110">
+                        </a>
+                        <!-- wishlist add button -->
+                        <div id="successButton" data-modal-toggle="successModal"  class="wishlist-btn absolute bottom-0 right-0 bg-lightGrey px-3 py-2 shadow hover:opacity-90 transition-opacity hidden group-hover:block">
+                            <i class="wishlist-btn-icon fa-regular fa-heart fa-lg text-grey"></i>
+                        </div>
+                    </div>
+                    <a href="product_detail_pages/men_clothing_product_3.html">
+                        <h3 class="mt-4 font-lato font-normal text-subtitle1 text-offBlack">
+                            Longyi Village - Chain Khar Mhi Longyi
+                        </h3>
+                    </a>
+                    <p class="mt-1 font-karla font-normal text-description text-grey">
+                        34000 MMK
+                    </p>
+                </div>
+                <div class="group">
+                    <div class="relative aspect-h-1 aspect-w-1 w-full overflow-hidden xl:aspect-h-8 xl:aspect-w-7">
+                        <a href="product_detail_pages/other_product_2.html">
+                            <img src="asset/product_images/other_products/other_product_2.jpg" alt="other_product_2" class="h-full w-full object-cover object-center transition duration-300 ease-in-out group-hover:scale-110">
+                        </a>
+                        <!-- wishlist add button -->
+                        <div id="successButton" data-modal-toggle="successModal"  class="wishlist-btn absolute bottom-0 right-0 bg-lightGrey px-3 py-2 shadow hover:opacity-90 transition-opacity hidden group-hover:block">
+                            <i class="wishlist-btn-icon fa-regular fa-heart fa-lg text-grey"></i>
+                        </div>
+                    </div>
+                    <a href="product_detail_pages/other_product_2.html">
+                        <h3 class="mt-4 font-lato font-normal text-subtitle1 text-offBlack">
+                            Shwe Burma - Tobacco Cigar VIP Box
+                        </h3>
+                    </a>
+                    <p class="mt-1 font-karla font-normal text-description text-grey">
+                        2000 MMK
+                    </p>
+                </div>
+                <div class="group">
+                    <div class="relative aspect-h-1 aspect-w-1 w-full overflow-hidden xl:aspect-h-8 xl:aspect-w-7">
+                        <a href="product_detail_pages/beauty_products_product_1.html">
+                            <img src="asset/product_images/beauty_products_product_1/beauty_products_product_1.jpg" alt="beauty_products_product_1" class="h-full w-full object-cover object-center transition duration-300 ease-in-out group-hover:scale-110">
+                        </a>
+                        <!-- wishlist add button -->
+                        <div id="successButton" data-modal-toggle="successModal"  class="wishlist-btn absolute bottom-0 right-0 bg-lightGrey px-3 py-2 shadow hover:opacity-90 transition-opacity hidden group-hover:block">
+                            <i class="wishlist-btn-icon fa-regular fa-heart fa-lg text-grey"></i>
+                        </div>
+                    </div>
+                    <a href="product_detail_pages/beauty_products_product_1.html">
+                        <h3 class="mt-4 font-lato font-normal text-subtitle1 text-offBlack">
+                            De Leaf Thanaka - Thanaka Moisturizing & Whitening Cream
+                        </h3>
+                    </a>
+                    <p class="mt-1 font-karla font-normal text-description text-grey">
+                        6000 MMK
+                    </p>
+                </div>
+                <div class="group">
+                    <div class="relative aspect-h-1 aspect-w-1 w-full overflow-hidden xl:aspect-h-8 xl:aspect-w-7">
+                        <a href="product_detail_pages/souvenir_product_3.html">
+                            <img src="asset/product_images/souvenir_product_3/souvenir_product_3.jpg" alt="souvenir_product_3" class="h-full w-full object-cover object-center transition duration-300 ease-in-out group-hover:scale-110">
+                        </a>
+                        <!-- wishlist add button -->
+                        <div id="successButton" data-modal-toggle="successModal"  class="wishlist-btn absolute bottom-0 right-0 bg-lightGrey px-3 py-2 shadow hover:opacity-90 transition-opacity hidden group-hover:block">
+                            <i class="wishlist-btn-icon fa-regular fa-heart fa-lg text-grey"></i>
+                        </div>
+                    </div>
+                    <a href="product_detail_pages/souvenir_product_3.html">
+                        <h3 class="mt-4 font-lato font-normal text-subtitle1 text-offBlack">
+                            Mork Jarm Kham - Traditional Handmade Bamboo Bag
+                        </h3>
+                    </a>
+                    <p class="mt-1 font-karla font-normal text-description text-grey">
+                        18000 MMK
+                    </p>
+                </div>
+            </div>
+            <!-- view all button -->
+            <div class="text-center">
+                <a href="bestSellers.html"><button type="button" class="font-karla font-medium text-navText text-grey bg-lightBrownishGrey px-7 py-2.5 hover:text-primaryBrown transition-colors">View all</button></a>
+            </div>
+        </section>
+
+        <!-- product category section -->
+        <section id="product_categories" class="container mx-auto px-4 py-4 lg:py-0 mb-16">
+            <!-- title -->
+            <h2 class="font-lato font-medium text-header1 text-primaryBrown text-center lg:text-start mb-10">
+                Shop by category
+            </h2>
+            <!-- categories -->
+            <ul class="grid grid-cols-1 gap-4 mt-8 lg:grid-cols-3 mb-10">
+                <li>
+                    <a href="menClothing.html" class="relative block group">
+                        <img
+                        src="asset/images/home_page_men_clothing.jpg"
+                        alt="home_page_men_clothing.jpg"
+                        class="object-cover w-full transition duration-500 aspect-square group-hover:opacity-90 transition-opacity"
+                        />
+                        <div class="absolute inset-0 flex flex-col items-start justify-end p-6">
+                            <h3 class="font-lato font-normal text-description text-white">
+                                Men clothing
+                            </h3>
+                            <span class="mt-1.5 inline-block bg-grey px-5 py-3 font-karla font-medium text-navText text-lightGrey hover:opacity-90 transition-opacity tracking-wide">
+                                Shop now
+                            </span>
+                        </div>
+                    </a>
+                </li>
+        
+                <li>
+                    <a href="womenClothing.html" class="relative block group">
+                        <img
+                        src="asset/images/home_page_women_clothing.jpg"
+                        alt="home_page_women_clothing"
+                        class="object-cover w-full transition duration-500 aspect-square group-hover:opacity-90 transition-opacity"
+                        />
+                        <div class="absolute inset-0 flex flex-col items-start justify-end p-6">
+                            <h3 class="font-lato font-normal text-description text-white">
+                                Women clothing
+                            </h3>
+                            <span class="mt-1.5 inline-block bg-grey px-5 py-3 font-karla font-medium text-navText text-lightGrey hover:opacity-90 transition-opacity tracking-wide">
+                                Shop now
+                            </span>
+                        </div>
+                    </a>
+                </li>
+        
+                <li class="lg:col-span-2 lg:col-start-2 lg:row-span-2 lg:row-start-1">
+                    <a href="souvenirs.html" class="relative block group">
+                        <img
+                        src="asset/images/home_page_souvenirs.jpg"
+                        alt="home_page_souvenirs"
+                        class="object-cover w-full transition duration-500 aspect-square group-hover:opacity-90 transition-opacity"
+                        />
+            
+                        <div class="absolute inset-0 flex flex-col items-start justify-end p-6">
+                            <h3 class="font-lato font-normal text-description text-white">
+                                Souvenirs
+                            </h3>
+                            <span class="mt-1.5 inline-block bg-grey px-5 py-3 font-karla font-medium text-navText text-lightGrey hover:opacity-90 transition-opacity tracking-wide">
+                                Shop now
+                            </span>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+            <!-- view all button -->
+            <div class="text-center">
+                <a href="productCategories.html"><button type="button" class="font-karla font-medium text-navText text-grey bg-lightBrownishGrey px-7 py-2.5 hover:text-primaryBrown transition-colors">View all</button></a>
+            </div>
+        </section>
+
+        <!-- about Yoe Yar highlight section -->
+        <section  id="about_us_intro" class="container mx-auto px-4 py-4 lg:py-0 mb-16">
+            <div class="grid grid-cols-1 gap-y-10 lg:grid-cols-2 lg:gap-x-6">
+                <!-- left items -->
+                <div class="bg-primaryBrown shadow p-12 md:p-8 xl:p-12">
+                    <div class="flex flex-col">
+                        <h1 class="font-lato font-medium text-header1 text-lightGrey text-center lg:text-start mb-4">
+                            It started with a small idea
+                        </h1>
+                        <p class="font-karla font-normal text-description text-lightGrey text-center lg:text-start mb-14 md:mb-12 lg:mb-14 xl:mb-40">
+                            With a love of Burmese traditional products, our story began in a small apartment in Yangon in early 2016.
+                        </p>
+                        <div class="flex flex-row space-x-2 justify-center lg:justify-start">
+                            <a href="aboutUs.html"><button type="button" class="font-karla font-medium text-navText text-lightBrownishGrey bg-transparent border border-lightBrownishGrey px-2 md:px-7 py-2.5 hover:text-primaryBrown hover:bg-lightBrownishGrey transition-colors">About Yoe Yar</button></a>
+                            <a href="contactUs.html"><button type="button" class="font-karla font-medium text-navText text-grey bg-lightBrownishGrey px-2 md:px-7 py-2.5 hover:text-primaryBrown transition-colors">Contact us</button></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- right image -->
+                <div>
+                    <img class="shadow" src="asset/images/home_page_about_us.jpg" alt="home_page_about_us">
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Wishlist Add Success Message -->
+    <div id="successModal" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-modal md:h-full">
+        <div class="relative p-4 w-full max-w-md h-full md:h-auto">
+            <!-- Modal content -->
+            <div class="relative p-4 text-center bg-white rounded-lg shadow sm:p-5">
+                <button type="button" class="text-offBlack absolute top-2.5 right-2.5 bg-transparent hover:bg-grey hover:text-lightGrey transition-colors rounded-lg text-sm p-1.5 ml-auto inline-flex items-center" data-modal-toggle="successModal">
+                    <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                    <span class="sr-only">Close modal</span>
+                </button>
+                <div class="w-12 h-12 rounded-full p-2 flex items-center justify-center mx-auto mb-3.5">
+                    <i class="fa-solid fa-heart fa-2x text-red"></i>
+                </div>
+                <p class="mb-4 font-karla font-medium text-description text-offBlack">Successfully added product to your wishlist.</p>
+                <button data-modal-toggle="successModal" type="button" class="py-2 px-3 font-karla font-medium text-navText text-offBlack hover:bg-grey hover:text-lightGrey transition-colors text-center border-2 border-offBlack">
+                    Continue
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Back to top button -->
+    <div id="backToTopContainer" class="fixed bottom-8 right-4 invisible">
+        <button id="backToTopButton" class="px-4 py-4 rounded-full shadow-md bg-grey hover:bg-offBlack text-lightGrey text-navText font-semibold transition-colors duration-300">
+            <svg aria-hidden="true" focusable="false" data-prefix="fas"class="h-4 w-4" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                <path fill="currentColor"d="M34.9 289.5l-22.2-22.2c-9.4-9.4-9.4-24.6 0-33.9L207 39c9.4-9.4 24.6-9.4 33.9 0l194.3 194.3c9.4 9.4 9.4 24.6 0 33.9L413 289.4c-9.5 9.5-25 9.3-34.3-.4L264 168.6V456c0 13.3-10.7 24-24 24h-32c-13.3 0-24-10.7-24-24V168.6L69.2 289.1c-9.3 9.8-24.8 10-34.3.4z"></path>
+            </svg>
+            <span class="sr-only">Go to top</span>
+        </button>
+    </div>
+
+    <!-- footer -->
+    <footer class="bg-primaryBrown">
+        <!-- footer top -->
+        <div class="container mx-auto flex flex-col justify-between px-4 py-8 lg:py-12 space-y-12 xl:flex-row xl:space-y-0">
+            <div class="flex flex-row justify-between space-x-2 xl:space-x-32">
+                <div class="flex flex-col space-y-2">
+                    <h1 class="font-karla font-medium text-subtitle2 text-lightGrey">Products</h1>
+                    <a href="newItems.html" class="font-karla font-medium text-navText text-lightGrey hover:opacity-90 transition-opacity">
+                        New items
+                    </a>
+                    <a href="bestSellers.html" class="font-karla font-medium text-navText text-lightGrey hover:opacity-90 transition-opacity">
+                        Best sellers
+                    </a>
+                    <a href="" class="font-karla font-medium text-navText text-lightGrey hover:opacity-90 transition-opacity">
+                        Recently viewed
+                    </a>
+                    <a href="" class="font-karla font-medium text-navText text-lightGrey hover:opacity-90 transition-opacity">
+                        Popular this week
+                    </a>
+                </div>
+                <div class="flex flex-col space-y-2">
+                    <h1 class="font-karla font-medium text-subtitle2 text-lightGrey">User info</h1>
+                    <a href="login.html" class="font-karla font-medium text-navText text-lightGrey hover:opacity-90 transition-opacity">
+                        My account
+                    </a>
+                    <a href="login.html" class="font-karla font-medium text-navText text-lightGrey hover:opacity-90 transition-opacity">
+                        Purchases
+                    </a>
+                </div>
+                <div class="flex flex-col space-y-2">
+                    <h1 class="font-karla font-medium text-subtitle2 text-lightGrey">Our service</h1>
+                    <a href="aboutUs.html" class="font-karla font-medium text-navText text-lightGrey hover:opacity-90 transition-opacity">
+                        About us
+                    </a>
+                    <a href="FAQs.html" class="font-karla font-medium text-navText text-lightGrey hover:opacity-90 transition-opacity">
+                        FAQs
+                    </a>
+                    <a href="privacyPolicy.html" class="font-karla font-medium text-navText text-lightGrey hover:opacity-90 transition-opacity">
+                        Privacy policy
+                    </a>
+                    <a href="returnExchangePolicy.html" class="font-karla font-medium text-navText text-lightGrey hover:opacity-90 transition-opacity">
+                        Return/exchange policy
+                    </a>
+                    <a href="contactUs.html" class="font-karla font-medium text-navText text-lightGrey hover:opacity-90 transition-opacity">
+                        Contact us
+                    </a>
+                </div>
+            </div>
+            <div class="w-4/4 xl:w-2/4 flex flex-col space-y-2 items-center md:items-start">
+                <h1 class="font-karla font-medium text-subtitle2 text-lightGrey">Join our mailing list</h1>
+                <p class="font-karla font-normal text-bodyText text-lightGrey text-center md:text-start">Sign up for our newsletter and receive exclusive offers on new arrivals, sales, pop up stores and more.</p>
+                <!-- email form -->
+                <form action="">
+                    <div class="flex">
+                        <input class="px-4 focus:outline-none font-karla font-normal text-baseText text-offBlack" type="text" name="" id="" placeholder="your@email.com">
+                        <button type="button" class="font-karla font-medium text-navText text-grey bg-lightBrownishGrey px-4 py-2 hover:text-primaryBrown transition-colors">Sign Up</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-- divider -->
+        <hr class="container mx-auto px-4 border-solid border-lightGrey ">
+        <!-- copyright & social links -->
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex flex-col space-y-4 md:flex-row-reverse md:space-y-0 items-center md:items-start justify-between">
+                <div class="flex flex-row space-x-8">
+                    <a href="" class="hover:opacity-90 transition-opacity">
+                        <i class="fa-brands fa-facebook-f fa-2x text-lightGrey"></i>
+                    </a>
+                    <a href="" class="hover:opacity-90 transition-opacity">
+                        <i class="fa-brands fa-x-twitter fa-2x text-lightGrey"></i>
+                    </a>
+                    <a href="" class="hover:opacity-90 transition-opacity">
+                        <i class="fa-brands fa-pinterest-p fa-2x text-lightGrey"></i>
+                    </a>
+                    <a href="" class="hover:opacity-90 transition-opacity">
+                        <i class="fa-brands fa-instagram fa-2x text-lightGrey"></i>
+                    </a>
+                </div>
+                <p class="font-karla font-normal text-bodyText text-lightGrey">
+                    Copyright &copy; 2022, All Rights Reserved
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- flowbite tailwind components javascript -->
+    <script src="https://unpkg.com/@themesberg/flowbite@latest/dist/flowbite.bundle.js"></script>
+    <!-- custom javascript -->
+    <script src="scripts/customScripts.js"></script>
+    <script src="scripts/backToTopButtonBehaviours.js"></script>
+</body>
+
+</html>
